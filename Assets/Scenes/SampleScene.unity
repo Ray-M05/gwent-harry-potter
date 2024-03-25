@@ -1524,7 +1524,9 @@ RectTransform:
   m_Children:
   - {fileID: 1662539118}
   - {fileID: 899518284}
+  - {fileID: 2033070958}
   - {fileID: 2008974241}
+  - {fileID: 1053375466}
   - {fileID: 1224648053}
   - {fileID: 1530501810}
   - {fileID: 1358789776}
@@ -2535,6 +2537,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1053375465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1053375466}
+  - component: {fileID: 1053375468}
+  - component: {fileID: 1053375467}
+  m_Layer: 5
+  m_Name: Slytherin Leader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1053375466
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053375465}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 853305213}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -233, y: 100.3}
+  m_SizeDelta: {x: 45.497, y: 64.2136}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1053375467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053375465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: b0da901e264e55b4eb2361ae74f8aa08, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1053375468
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053375465}
+  m_CullTransparentMesh: 1
 --- !u!1 &1136233892
 GameObject:
   m_ObjectHideFlags: 0
@@ -2828,6 +2902,28 @@ MonoBehaviour:
   Deck:
   - {fileID: 5407418274989691270, guid: 2108d3b93edd2134195555a51c5d3120, type: 3}
   - {fileID: 855158236401615108, guid: afe78440adccb914fa3060dd9a16b1aa, type: 3}
+  - {fileID: 7882682494448392462, guid: dae892758fc17454bb1fdb51b7daa887, type: 3}
+  - {fileID: 5439071002421894317, guid: 39d22fbc09740ec48810d07169843d94, type: 3}
+  - {fileID: 3878698886195265217, guid: e73b9cb2cc461494296232b5ed4c81cf, type: 3}
+  - {fileID: 3878698886195265217, guid: e73b9cb2cc461494296232b5ed4c81cf, type: 3}
+  - {fileID: 6208870139066416336, guid: 867ea4916d6d3904f81650d7b9ae5811, type: 3}
+  - {fileID: 6208870139066416336, guid: 867ea4916d6d3904f81650d7b9ae5811, type: 3}
+  - {fileID: 4558925394667473313, guid: 56c97d931bf97284eaaf581333d4cb8f, type: 3}
+  - {fileID: 4558925394667473313, guid: 56c97d931bf97284eaaf581333d4cb8f, type: 3}
+  - {fileID: 5168308471506133081, guid: 6fd2dfd14ed2fae4595f96a31d9691a7, type: 3}
+  - {fileID: 5168308471506133081, guid: 6fd2dfd14ed2fae4595f96a31d9691a7, type: 3}
+  - {fileID: 1231274692394532738, guid: fc5b3e7fda50c904b81d3867ec8b095d, type: 3}
+  - {fileID: 1231274692394532738, guid: fc5b3e7fda50c904b81d3867ec8b095d, type: 3}
+  - {fileID: 6051701484381709516, guid: f82f6ec73d84a3045a2c432f9cb3ca59, type: 3}
+  - {fileID: 1691394410213087896, guid: 3c0a02632e054ed499910fd97d3019d5, type: 3}
+  - {fileID: 5995300173584022777, guid: 2caf27004fc8ed747ad0348714fbd446, type: 3}
+  - {fileID: 5764586619742123259, guid: ae06a49db575a1446b85fdbb89e52ba8, type: 3}
+  - {fileID: 8846355461808973473, guid: e6333c39917b0814da354fdcafba84a3, type: 3}
+  - {fileID: 6410745120230608832, guid: c06e9eadc1878ca40979131f63e37cea, type: 3}
+  - {fileID: 320799709472385040, guid: fda7e47fd8785f8498d42a93c5c26049, type: 3}
+  - {fileID: 7249596450955044825, guid: d86ec856cff5c8d40beef7692e984cad, type: 3}
+  - {fileID: 7411244910399077299, guid: 4f908f9a98403e04a8689244220435c5, type: 3}
+  - {fileID: 5053968528738664789, guid: 43016ce702462de41824af19bbe27de3, type: 3}
   Pos: []
   Hand: []
   PosCuerpoacuerpo: []
@@ -3306,6 +3402,16 @@ MonoBehaviour:
   - {fileID: 5973616855380248218, guid: aa8fbb3af789bd74dbc909a79da226af, type: 3}
   - {fileID: 8814049558384687565, guid: 8d833a256ea2a3f4ca2dc0d67645621a, type: 3}
   - {fileID: 8814049558384687565, guid: 8d833a256ea2a3f4ca2dc0d67645621a, type: 3}
+  - {fileID: 6051701484381709516, guid: f82f6ec73d84a3045a2c432f9cb3ca59, type: 3}
+  - {fileID: 1691394410213087896, guid: 3c0a02632e054ed499910fd97d3019d5, type: 3}
+  - {fileID: 5995300173584022777, guid: 2caf27004fc8ed747ad0348714fbd446, type: 3}
+  - {fileID: 5764586619742123259, guid: ae06a49db575a1446b85fdbb89e52ba8, type: 3}
+  - {fileID: 8846355461808973473, guid: e6333c39917b0814da354fdcafba84a3, type: 3}
+  - {fileID: 6410745120230608832, guid: c06e9eadc1878ca40979131f63e37cea, type: 3}
+  - {fileID: 320799709472385040, guid: fda7e47fd8785f8498d42a93c5c26049, type: 3}
+  - {fileID: 7249596450955044825, guid: d86ec856cff5c8d40beef7692e984cad, type: 3}
+  - {fileID: 7411244910399077299, guid: 4f908f9a98403e04a8689244220435c5, type: 3}
+  - {fileID: 5053968528738664789, guid: 43016ce702462de41824af19bbe27de3, type: 3}
   Pos:
   - {fileID: 959048282}
   - {fileID: 1136233894}
@@ -4722,6 +4828,78 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008974240}
+  m_CullTransparentMesh: 1
+--- !u!1 &2033070957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2033070958}
+  - component: {fileID: 2033070960}
+  - component: {fileID: 2033070959}
+  m_Layer: 5
+  m_Name: Gryffindor Leader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2033070958
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033070957}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 853305213}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -232.5, y: -84.7}
+  m_SizeDelta: {x: 45.497, y: 64.2136}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2033070959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033070957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 89067af4020f50e4ca3ae81000d158e6, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &2033070960
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033070957}
   m_CullTransparentMesh: 1
 --- !u!1 &2035183560
 GameObject:
