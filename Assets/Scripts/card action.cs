@@ -12,13 +12,18 @@ public class cardaction : MonoBehaviour
     public GameObject panel_opciones,panel_invocaciones; //inicializar el panel de menu de invocaciones
     public int carta_mano;
     public RawImage cardvisual;
-    public TextMeshPro cardescription;
+    public TextMeshProUGUI cardescription;
+    public GameObject description_;
+    
     private void Start()
     {
         imagecard = GetComponent<RawImage>(); //inicializa imagen de la carta
         mazo = GameObject.FindGameObjectWithTag("Gryffindor").GetComponent<hogwartsdeck>(); //inicializa el mazo
         cardvisual = GameObject.FindGameObjectWithTag("cardvisual").GetComponent<RawImage>();  //
-        cardescription = GameObject.FindGameObjectWithTag("cardescription").GetComponent<TextMeshPro>();
+        cardescription = GameObject.FindGameObjectWithTag("cardescription").GetComponent<TextMeshProUGUI>();
+
+        cardvisual.transform.localScale = new Vector2(0, 0);
+        description_.transform.localScale = new Vector2(0, 0);
     }
 
     public void Opciones()  //funcion del boton de carta
@@ -26,7 +31,17 @@ public class cardaction : MonoBehaviour
         panel_opciones.SetActive(true);  //activa el panel de opciones cuando toca la carta
         panel_invocaciones.SetActive(false);
         panel_opciones.GetComponent<Buttonaction>().Carta = GetComponent<cardaction>();
-        cardvisual.texture = imagecard.texture;
+        
+        cardvisual.texture = imagecard.texture;  //le pasa la foto de la carta al cardvisual
+        cardvisual.transform.localScale = new Vector2(1, 1);
+
+        cardescription.text = "";
+        description_.transform.localScale = new Vector2(1, 1);
+        for (int i = 0; i < mazo.Hand[carta_mano].GetComponent<Card>().campo.Length; i++)
+        {
+            cardescription.text += mazo.Hand[carta_mano].GetComponent<Card>().campo[i].ToString();
+            cardescription.text += "\n";
+        }
     }
     public void invocar(int campo) //un numero que sera cuerpoacuerpo, distancia o asedio
     {

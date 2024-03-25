@@ -13,6 +13,7 @@ public class Buttonaction : MonoBehaviour
         gameObject.SetActive(false);
         panel.SetActive(true);
         panel.GetComponent<Buttonaction>().Carta = Carta;
+
     
     }
 
