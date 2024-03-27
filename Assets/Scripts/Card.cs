@@ -35,6 +35,9 @@ public enum Place{
         Asedio,
         Distancia,
         Clima,
+        Aumento,
+        Despeje,
+        Señuelo,
         Cementerio,
     }
 

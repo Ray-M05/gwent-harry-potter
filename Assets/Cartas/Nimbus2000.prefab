@@ -100,5 +100,5 @@ MonoBehaviour:
   points: 4
   house: 0
   unidad: 3
-  campo: 03000000
+  campo: 04000000
   name: Nimbus 2000

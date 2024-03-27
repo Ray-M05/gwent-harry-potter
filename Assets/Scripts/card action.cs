@@ -9,8 +9,10 @@ public class cardaction : MonoBehaviour
 
     RawImage imagecard; //imagen de la carta actual
     hogwartsdeck mazo; //localizar el script deck
+    hogwartsdeck mazo1;
     public GameObject panel_opciones,panel_invocaciones; //inicializar el panel de menu de invocaciones
     public int carta_mano;
+    public string playerTurn;
     public RawImage cardvisual;
     public TextMeshProUGUI cardescription;
     public GameObject description_;
@@ -18,7 +20,8 @@ public class cardaction : MonoBehaviour
     private void Start()
     {
         imagecard = GetComponent<RawImage>(); //inicializa imagen de la carta
-        mazo = GameObject.FindGameObjectWithTag("Gryffindor").GetComponent<hogwartsdeck>(); //inicializa el mazo
+        mazo = GameObject.FindGameObjectWithTag("Gryffindor").GetComponent<hogwartsdeck>(); //inicializa el mazo de gryffindor
+        mazo1 = GameObject.FindGameObjectWithTag("Slytherin").GetComponent<hogwartsdeck>(); //inicializa el mazo de slytherin
         cardvisual = GameObject.FindGameObjectWithTag("cardvisual").GetComponent<RawImage>();  //
         cardescription = GameObject.FindGameObjectWithTag("cardescription").GetComponent<TextMeshProUGUI>();
 
@@ -37,66 +40,140 @@ public class cardaction : MonoBehaviour
 
         cardescription.text = "";
         description_.transform.localScale = new Vector2(1, 1);
-        for (int i = 0; i < mazo.Hand[carta_mano].GetComponent<Card>().campo.Length; i++)
+        if (playerTurn == "Gryff")
         {
-            cardescription.text += mazo.Hand[carta_mano].GetComponent<Card>().campo[i].ToString();
-            cardescription.text += "\n";
+            for (int i = 0; i < mazo.Hand[carta_mano].GetComponent<Card>().campo.Length; i++)
+            {
+                cardescription.text += mazo.Hand[carta_mano].GetComponent<Card>().campo[i].ToString();
+                cardescription.text += "\n";
+            }
+        }
+        else if (playerTurn == "Slyth")
+        {
+            cardescription.text = "";
+            for (int i = 0; i < mazo1.Hand[carta_mano].GetComponent<Card>().campo.Length; i++)
+            {
+                cardescription.text += mazo1.Hand[carta_mano].GetComponent<Card>().campo[i].ToString();
+                cardescription.text += "\n";
+            }
         }
     }
     public void invocar(int campo) //un numero que sera cuerpoacuerpo, distancia o asedio
     {
-        if (imagecard.texture != null) //verifica que haya una imagen en la carta
+        if (playerTurn == "Gryff")
         {
-            if(campocarta("Cuerpoacuerpo",mazo.Hand, carta_mano))
+            if (imagecard.texture != null) //verifica que haya una imagen en la carta
             {
-                if (campo == 1)
+                if (campocarta("Cuerpoacuerpo", mazo.Hand, carta_mano))
                 {
-                    for (int i = 0; i < mazo.PosCuerpoacuerpo.Count; i++) //recorre pos cuerpoacuerpo
+                    if (campo == 1)
                     {
-                        if (mazo.PosCuerpoacuerpo[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
+                        for (int i = 0; i < mazo.PosCuerpoacuerpo.Count; i++) //recorre pos cuerpoacuerpo
                         {
-                            mazo.PosCuerpoacuerpo[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
-                            imagecard.texture = null; //quita la carta de hand
-                            break;
+                            if (mazo.PosCuerpoacuerpo[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
+                            {
+                                mazo.PosCuerpoacuerpo[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
+                                imagecard.texture = null; //quita la carta de hand
+                                break;
+                            }
                         }
                     }
                 }
-            }
 
-            if (campocarta("Distancia", mazo.Hand, carta_mano))
-            {
-                if (campo == 2)
+                if (campocarta("Distancia", mazo.Hand, carta_mano))
                 {
-                    for (int i = 0; i < mazo.PosDistancia.Count; i++) //recorre pos distancia
+                    if (campo == 2)
                     {
-                        if (mazo.PosDistancia[i].texture == null) //verifica que las pos distancia no tengan una carta
+                        for (int i = 0; i < mazo.PosDistancia.Count; i++) //recorre pos distancia
                         {
-                            mazo.PosDistancia[i].texture = imagecard.texture; //invocar la carta en distancia
-                            imagecard.texture = null; //quita la carta de hand
-                            break;
+                            if (mazo.PosDistancia[i].texture == null) //verifica que las pos distancia no tengan una carta
+                            {
+                                mazo.PosDistancia[i].texture = imagecard.texture; //invocar la carta en distancia
+                                imagecard.texture = null; //quita la carta de hand
+                                break;
+                            }
                         }
                     }
                 }
-            }
 
-            if (campocarta("Asedio", mazo.Hand,carta_mano))
-            {
-                if (campo == 3)
+                if (campocarta("Asedio", mazo.Hand, carta_mano))
                 {
-                    for (int i = 0; i < mazo.PosAsedio.Count; i++) //recorre pos asedio
+                    if (campo == 3)
                     {
-                        if (mazo.PosAsedio[i].texture == null) //verifica que las pos asedio no tengan una carta
+                        for (int i = 0; i < mazo.PosAsedio.Count; i++) //recorre pos asedio
                         {
-                            mazo.PosAsedio[i].texture = imagecard.texture; //invocar la carta en asedio
-                            imagecard.texture = null; //quita la carta de hand
-                            break;
+                            if (mazo.PosAsedio[i].texture == null) //verifica que las pos asedio no tengan una carta
+                            {
+                                mazo.PosAsedio[i].texture = imagecard.texture; //invocar la carta en asedio
+                                imagecard.texture = null; //quita la carta de hand
+                                break;
+                            }
                         }
                     }
                 }
+
+
             }
-                
-            
         }
+
+
+        if (playerTurn == "Slyth")
+        {
+            if (imagecard.texture != null) //verifica que haya una imagen en la carta
+            {
+                if (campocarta("Cuerpoacuerpo", mazo1.Hand, carta_mano))
+                {
+                    if (campo == 1)
+                    {
+                        for (int i = 0; i < mazo1.PosCuerpoacuerpo.Count; i++) //recorre pos cuerpoacuerpo
+                        {
+                            if (mazo1.PosCuerpoacuerpo[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
+                            {
+                                mazo1.PosCuerpoacuerpo[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
+                                imagecard.texture = null; //quita la carta de hand
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                if (campocarta("Distancia", mazo1.Hand, carta_mano))
+                {
+                    if (campo == 2)
+                    {
+                        for (int i = 0; i < mazo1.PosDistancia.Count; i++) //recorre pos distancia
+                        {
+                            if (mazo1.PosDistancia[i].texture == null) //verifica que las pos distancia no tengan una carta
+                            {
+                                mazo1.PosDistancia[i].texture = imagecard.texture; //invocar la carta en distancia
+                                imagecard.texture = null; //quita la carta de hand
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                if (campocarta("Asedio", mazo1.Hand, carta_mano))
+                {
+                    if (campo == 3)
+                    {
+                        for (int i = 0; i < mazo1.PosAsedio.Count; i++) //recorre pos asedio
+                        {
+                            if (mazo1.PosAsedio[i].texture == null) //verifica que las pos asedio no tengan una carta
+                            {
+                                mazo1.PosAsedio[i].texture = imagecard.texture; //invocar la carta en asedio
+                                imagecard.texture = null; //quita la carta de hand
+                                break;
+                            }
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+
     }
     public bool campocarta(string verificacion, List<GameObject> hand,int carta_a_revisar)
     {
