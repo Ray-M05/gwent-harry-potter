@@ -112,70 +112,59 @@ public class cardaction : MonoBehaviour
                     }
                 }
 
-                if (campocarta("Clima", mazo.Hand, carta_mano))
+                if (campocarta("Aumento", mazo.Hand, carta_mano))
                 {
-                    for (int i = 0; i < mazo.PosClimaDespejeC.Count; i++)
-                    {
                         if (campo == 4)
                         {
-                            if (mazo.PosClimaDespejeC[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
+                            if (mazo.PosAumento[0].texture == null) 
                             {
-                                mazo.PosClimaDespejeC[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
-                                mazo1.PosClimaDespejeC[i].texture = imagecard.texture; //pasa el clima hacia la posicion del otro deck
+                                mazo.PosAumento[0].texture = imagecard.texture; 
                                 imagecard.texture = null; //quita la carta de hand
                             }
                         }
                         if (campo == 5)
                         {
-                            if (mazo.PosClimaDespejeD[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
+                            if (mazo.PosAumento[1].texture == null) 
                             {
-                                mazo.PosClimaDespejeD[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
-                                mazo1.PosClimaDespejeD[i].texture = imagecard.texture;
+                                mazo.PosAumento[1].texture = imagecard.texture; 
                                 imagecard.texture = null; //quita la carta de hand
                             }
                         }
                         if (campo == 6)
                         {
-                            if (mazo.PosClimaDespejeA[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
+                            if (mazo.PosAumento[2].texture == null) 
                             {
-                                mazo.PosClimaDespejeA[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
-                                mazo1.PosClimaDespejeA[i].texture = imagecard.texture;
+                                mazo.PosAumento[2].texture = imagecard.texture; 
                                 imagecard.texture = null; //quita la carta de hand
                             }
                         }
-                      
-                    }
                 }
 
-                if (campocarta("Aumento", mazo.Hand, carta_mano))
+                if (campocarta("Clima", mazo.Hand, carta_mano))
                 {
-                    for (int i = 0; i < mazo.PosAumentoC.Count; i++)
+                    if (campo == 7)
                     {
-                        if (campo == 7)
+                        if (mazo.PosClima[0].texture == null)
                         {
-                            if (mazo.PosAumentoC[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
-                            {
-                                mazo.PosAumentoC[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
-                                imagecard.texture = null; //quita la carta de hand
-                            }
+                            mazo.PosClima[0].texture = imagecard.texture;
+                            imagecard.texture = null; //quita la carta de hand
                         }
-                        if (campo == 8)
+                    }
+                    if (campo == 8)
+                    {
+                        if (mazo.PosClima[1].texture == null)
                         {
-                            if (mazo.PosAumentoD[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
-                            {
-                                mazo.PosAumentoD[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
-                                imagecard.texture = null; //quita la carta de hand
-                            }
+                            mazo.PosClima[1].texture = imagecard.texture;
+                            imagecard.texture = null; //quita la carta de hand
                         }
-                        if (campo == 9)
+                    }
+                    if (campo == 9)
+                    {
+                        if (mazo.PosClima[2].texture == null)
                         {
-                            if (mazo.PosAumentoA[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
-                            {
-                                mazo.PosAumentoA[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
-                                imagecard.texture = null; //quita la carta de hand
-                            }
+                            mazo.PosClima[2].texture = imagecard.texture;
+                            imagecard.texture = null; //quita la carta de hand
                         }
-
                     }
                 }
 
@@ -235,77 +224,64 @@ public class cardaction : MonoBehaviour
                     }
                 }
 
-                if (campocarta("Clima", mazo1.Hand, carta_mano))
+                if (campocarta("Aumento", mazo1.Hand, carta_mano))
                 {
-                    for (int i = 0; i < mazo1.PosClimaDespejeC.Count; i++)
+                    if (campo == 4)
                     {
-                        if (campo == 4)
+                        if (mazo1.PosAumento[0].texture == null) 
                         {
-                            if (mazo1.PosClimaDespejeC[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
-                            {
-                                mazo1.PosClimaDespejeC[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
-                                mazo.PosClimaDespejeC[i].texture = imagecard.texture;
-                                imagecard.texture = null; //quita la carta de hand
-                            }
+                            mazo1.PosAumento[0].texture = imagecard.texture;
+                            imagecard.texture = null; 
                         }
-                        if (campo == 5)
+                    }
+                    if (campo == 5)
+                    {
+                        if (mazo1.PosAumento[1].texture == null) 
                         {
-                            if (mazo1.PosClimaDespejeD[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
-                            {
-                                mazo1.PosClimaDespejeD[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
-                                mazo.PosClimaDespejeD[i].texture = imagecard.texture;
-                                imagecard.texture = null; //quita la carta de hand
-                            }
+                            mazo1.PosAumento[1].texture = imagecard.texture;
+                            imagecard.texture = null; 
                         }
-                        if (campo == 6)
+                    }
+                    if (campo == 6)
+                    {
+                        if (mazo1.PosAumento[2].texture == null) 
                         {
-                            if (mazo1.PosClimaDespejeA[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
-                            {
-                                mazo1.PosClimaDespejeA[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
-                                mazo.PosClimaDespejeA[i].texture = imagecard.texture;
-                                imagecard.texture = null; //quita la carta de hand
-                            }
+                            mazo1.PosAumento[2].texture = imagecard.texture;
+                            imagecard.texture = null; 
                         }
-
                     }
                 }
 
-                if (campocarta("Aumento", mazo1.Hand, carta_mano))
+                if (campocarta("Clima", mazo1.Hand, carta_mano))
                 {
-                    for (int i = 0; i < mazo1.PosAumentoC.Count; i++)
-                    {
                         if (campo == 7)
                         {
-                            if (mazo1.PosAumentoC[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
+                            if (mazo1.PosClima[0].texture == null) 
                             {
-                                mazo1.PosAumentoC[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
+                                mazo1.PosClima[0].texture = imagecard.texture; 
                                 imagecard.texture = null; //quita la carta de hand
                             }
                         }
                         if (campo == 8)
                         {
-                            if (mazo1.PosAumentoD[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
+                            if (mazo1.PosClima[1].texture == null) 
                             {
-                                mazo1.PosAumentoD[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
+                                mazo1.PosClima[1].texture = imagecard.texture; 
                                 imagecard.texture = null; //quita la carta de hand
                             }
                         }
                         if (campo == 9)
                         {
-                            if (mazo1.PosAumentoA[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
+                            if (mazo1.PosClima[2].texture == null) 
                             {
-                                mazo1.PosAumentoA[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
+                                mazo1.PosClima[2].texture = imagecard.texture; 
                                 imagecard.texture = null; //quita la carta de hand
                             }
                         }
-
-                    }
                 }
 
             }
         }
-
-
     }
     public bool campocarta(string verificacion, List<GameObject> hand,int carta_a_revisar)
     {

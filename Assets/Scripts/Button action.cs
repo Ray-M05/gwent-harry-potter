@@ -19,16 +19,16 @@ public class Buttonaction : MonoBehaviour
 
     public void invocarCuerpoacuerpo()
     {
-        Carta.invocar(1);
-        Carta.invocar(4);
-        Carta.invocar(7);
+        Carta.invocar(1); //cartas cuerpo a cuerpo
+        Carta.invocar(4); //aumento pos cuerpo a cuerpo
+        Carta.invocar(7); //clima afecta cuerpo a cuerpo
     }
 
     public void invocarDistancia()
     {
-      Carta.invocar(2);
-      Carta.invocar(5); 
-      Carta.invocar(8);
+      Carta.invocar(2); //cartas
+      Carta.invocar(5);  //aumento
+      Carta.invocar(8); //clima
     }
 
     public void invocarAsedio()
