@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -168,6 +169,23 @@ public class cardaction : MonoBehaviour
                     }
                 }
 
+                if (campocarta("Despeje", mazo.Hand, carta_mano))
+                {
+                    if (campo == 10)
+                    {
+                        for (int i = 0; i < mazo.PosClima.Count;i ++)
+                        {
+                            if (mazo.PosClima[i].texture != null)
+                            {
+                                mazo.PosClima[i].texture = null;
+                            }
+
+                            
+                        }
+                        mazo.PosDespeje.texture = imagecard.texture;
+                        imagecard.texture = null;
+                    }
+                }
             }
         }
 
@@ -278,6 +296,23 @@ public class cardaction : MonoBehaviour
                                 imagecard.texture = null; //quita la carta de hand
                             }
                         }
+                }
+
+                if (campocarta("Despeje", mazo1.Hand, carta_mano))
+                {
+                    if (campo == 10)
+                    {
+                        for (int i = 0; i < mazo1.PosClima.Count; i++)
+                        {
+                            if (mazo1.PosClima[i].texture != null)
+                            {
+                                mazo1.PosClima[i].texture = null;
+
+                            }                           
+                        }
+                        mazo1.PosDespeje.texture = imagecard.texture;
+                        imagecard.texture = null;
+                    }
                 }
 
             }

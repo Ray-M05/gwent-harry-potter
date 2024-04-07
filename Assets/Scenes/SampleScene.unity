@@ -5520,8 +5520,7 @@ MonoBehaviour:
   - {fileID: 81748985}
   - {fileID: 33859578}
   - {fileID: 574140065}
-  PosDespeje:
-  - {fileID: 400120289}
+  PosDespeje: {fileID: 400120289}
   Cementerio: []
 --- !u!4 &1231346218
 Transform:
@@ -6407,8 +6406,7 @@ MonoBehaviour:
   - {fileID: 81748985}
   - {fileID: 33859578}
   - {fileID: 574140065}
-  PosDespeje:
-  - {fileID: 400120289}
+  PosDespeje: {fileID: 400120289}
   Cementerio: []
 --- !u!1 &1465755271
 GameObject:
@@ -6495,7 +6493,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 13208415}
         m_TargetAssemblyTypeName: Buttonaction, Assembly-CSharp
-        m_MethodName: invocarAumento
+        m_MethodName: invocarDespeje
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

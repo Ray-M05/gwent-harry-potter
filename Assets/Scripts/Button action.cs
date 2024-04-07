@@ -40,6 +40,6 @@ public class Buttonaction : MonoBehaviour
 
     public void invocarDespeje()
     {
-       // Carta.invocar();
+        Carta.invocar(10);
     }
 }

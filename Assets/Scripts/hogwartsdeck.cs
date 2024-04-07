@@ -13,7 +13,7 @@ public class hogwartsdeck : MonoBehaviour
     public List<RawImage> PosAsedio = new List<RawImage>();
     public List<RawImage> PosAumento = new List<RawImage>();
     public List<RawImage> PosClima = new List<RawImage>();
-    public List<RawImage> PosDespeje = new List<RawImage>();
+    public RawImage PosDespeje;
     public List<GameObject> Cementerio = new List<GameObject>();
 
     private void Start()
@@ -118,18 +118,6 @@ public class hogwartsdeck : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < PosDespeje.Count; i++) //recorre las imagenes en blanco que son posiciones de la mano
-        {
-            if (PosDespeje[i].texture == null)
-            {
-                PosDespeje[i].transform.localScale = new Vector2(0, 0);
-            }
-            else
-            {
-                PosDespeje[i].transform.localScale = new Vector2(1, 1);
-            }
-        }
-
         for (int i = 0; i < Pos.Count; i++) //recorre las imagenes en blanco que son posiciones de la mano
         {
             if (Pos[i].texture == null)
@@ -142,6 +130,15 @@ public class hogwartsdeck : MonoBehaviour
             }
         }
 
-       
+        if (PosDespeje.texture == null)
+        {
+            PosDespeje.transform.localScale = new Vector2(0, 0);
+        }
+        else
+        {
+            PosDespeje.transform.localScale = new Vector2(2, 2);
+        }
+
+
     }
 }
