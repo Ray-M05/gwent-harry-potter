@@ -2194,6 +2194,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386349994}
   m_CullTransparentMesh: 1
+--- !u!1 &400120287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400120288}
+  - component: {fileID: 400120290}
+  - component: {fileID: 400120289}
+  m_Layer: 0
+  m_Name: posDespeje
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &400120288
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400120287}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -70.97228}
+  m_LocalScale: {x: 1.7316253, y: 1.7316253, z: 1.7316253}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 853305213}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -144, y: 7.3697}
+  m_SizeDelta: {x: 26.7187, y: 31.1451}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &400120289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400120287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &400120290
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400120287}
+  m_CullTransparentMesh: 1
 --- !u!1 &436153705
 GameObject:
   m_ObjectHideFlags: 0
@@ -2477,7 +2549,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Aumento
+  m_text: Despeje
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3613,6 +3685,7 @@ RectTransform:
   - {fileID: 356504798}
   - {fileID: 1742054960}
   - {fileID: 622522795}
+  - {fileID: 400120288}
   - {fileID: 99083356}
   - {fileID: 13208412}
   - {fileID: 482745277}
@@ -5552,10 +5625,14 @@ MonoBehaviour:
   - {fileID: 615049732}
   PosClimaDespejeA:
   - {fileID: 1090470585}
-  PosAumento:
+  PosAumentoC:
   - {fileID: 1759626842}
+  PosAumentoD:
   - {fileID: 239154603}
+  PosAumentoA:
   - {fileID: 1376822658}
+  PosDespeje:
+  - {fileID: 400120289}
   Cementerio: []
 --- !u!4 &1231346218
 Transform:
@@ -6511,10 +6588,14 @@ MonoBehaviour:
   - {fileID: 1282720052}
   PosClimaDespejeA:
   - {fileID: 804243001}
-  PosAumento:
+  PosAumentoC:
   - {fileID: 81748985}
+  PosAumentoD:
   - {fileID: 33859578}
+  PosAumentoA:
   - {fileID: 574140065}
+  PosDespeje:
+  - {fileID: 400120289}
   Cementerio: []
 --- !u!1 &1465755271
 GameObject:
@@ -6529,7 +6610,7 @@ GameObject:
   - component: {fileID: 1465755274}
   - component: {fileID: 1465755273}
   m_Layer: 5
-  m_Name: Aumento
+  m_Name: Despeje
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -14,7 +14,10 @@ public class hogwartsdeck : MonoBehaviour
     public List<RawImage> PosClimaDespejeC = new List<RawImage>();
     public List<RawImage> PosClimaDespejeD = new List<RawImage>();
     public List<RawImage> PosClimaDespejeA = new List<RawImage>();
-    public List<RawImage> PosAumento = new List<RawImage>();
+    public List<RawImage> PosAumentoC = new List<RawImage>();
+    public List<RawImage> PosAumentoD = new List<RawImage>();
+    public List<RawImage> PosAumentoA = new List<RawImage>();
+    public List<RawImage> PosDespeje = new List<RawImage>();
     public List<GameObject> Cementerio = new List<GameObject>();
 
     private void Start()
@@ -125,6 +128,48 @@ public class hogwartsdeck : MonoBehaviour
             }
         }
 
+        for (int i = 0; i < PosAumentoC.Count; i++)
+        {
+            if (PosAumentoC[i].texture == null) //si no hay imagen de una carta en la posicion
+            {
+                PosAumentoC[i].transform.localScale = new Vector2(0, 0); // la escla x y y seran 0
+            }
+            else
+            {
+                PosAumentoC[i].transform.localScale = new Vector2(1, 1); // la escala sera 1,1 (dimension de la carta en pos)
+            }
+
+            if (PosAumentoA[i].texture == null) //si no hay imagen de una carta en la posicion
+            {
+                PosAumentoA[i].transform.localScale = new Vector2(0, 0); // la escla x y y seran 0
+            }
+            else
+            {
+                PosAumentoA[i].transform.localScale = new Vector2(1, 1); // la escala sera 1,1 (dimension de la carta en pos)
+            }
+
+            if (PosAumentoD[i].texture == null) //si no hay imagen de una carta en la posicion
+            {
+                PosAumentoD[i].transform.localScale = new Vector2(0, 0); // la escla x y y seran 0
+            }
+            else
+            {
+                PosAumentoD[i].transform.localScale = new Vector2(1, 1); // la escala sera 1,1 (dimension de la carta en pos)
+            }
+        }
+
+        for (int i = 0; i < PosDespeje.Count; i++) //recorre las imagenes en blanco que son posiciones de la mano
+        {
+            if (PosDespeje[i].texture == null)
+            {
+                PosDespeje[i].transform.localScale = new Vector2(0, 0);
+            }
+            else
+            {
+                PosDespeje[i].transform.localScale = new Vector2(1, 1);
+            }
+        }
+
         for (int i = 0; i < Pos.Count; i++) //recorre las imagenes en blanco que son posiciones de la mano
         {
             if (Pos[i].texture == null)
@@ -137,16 +182,6 @@ public class hogwartsdeck : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < PosAumento.Count; i++) //recorre las imagenes en blanco que son pos de los aumentos 
-        {
-            if (PosAumento[i].texture == null)
-            {
-                PosAumento[i].transform.localScale = new Vector2(0, 0);
-            }
-            else
-            {
-                PosAumento[i].transform.localScale = new Vector2(1, 1);
-            }
-        }
+       
     }
 }
