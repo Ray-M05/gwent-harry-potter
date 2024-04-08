@@ -66,279 +66,284 @@ public class cardaction : MonoBehaviour
         {
             if (playerTurn == "Gryff" && GameManager.turn == playerTurn)
             {
-                if (imagecard.texture != null) //verifica que haya una imagen en la carta
+                if (GameManager.Gryffindor == false)
                 {
-                    if (campocarta("Cuerpoacuerpo", mazo.Hand, carta_mano))
+                    if (imagecard.texture != null) //verifica que haya una imagen en la carta
                     {
-                        if (campo == 1)
+                        if (campocarta("Cuerpoacuerpo", mazo.Hand, carta_mano))
                         {
-                            for (int i = 0; i < mazo.PosCuerpoacuerpo.Count; i++) //recorre pos cuerpoacuerpo
+                            if (campo == 1)
                             {
-                                if (mazo.PosCuerpoacuerpo[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
+                                for (int i = 0; i < mazo.PosCuerpoacuerpo.Count; i++) //recorre pos cuerpoacuerpo
                                 {
-                                    mazo.PosCuerpoacuerpo[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
+                                    if (mazo.PosCuerpoacuerpo[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
+                                    {
+                                        mazo.PosCuerpoacuerpo[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
+                                        imagecard.texture = null; //quita la carta de hand
+                                        GameManager.ConfirmaTurno = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (campocarta("Distancia", mazo.Hand, carta_mano))
+                        {
+                            if (campo == 2)
+                            {
+                                for (int i = 0; i < mazo.PosDistancia.Count; i++) //recorre pos distancia
+                                {
+                                    if (mazo.PosDistancia[i].texture == null) //verifica que las pos distancia no tengan una carta
+                                    {
+                                        mazo.PosDistancia[i].texture = imagecard.texture; //invocar la carta en distancia
+                                        imagecard.texture = null; //quita la carta de hand
+                                        GameManager.ConfirmaTurno = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (campocarta("Asedio", mazo.Hand, carta_mano))
+                        {
+                            if (campo == 3)
+                            {
+                                for (int i = 0; i < mazo.PosAsedio.Count; i++) //recorre pos asedio
+                                {
+                                    if (mazo.PosAsedio[i].texture == null) //verifica que las pos asedio no tengan una carta
+                                    {
+                                        mazo.PosAsedio[i].texture = imagecard.texture; //invocar la carta en asedio
+                                        imagecard.texture = null; //quita la carta de hand
+                                        GameManager.ConfirmaTurno = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (campocarta("Aumento", mazo.Hand, carta_mano))
+                        {
+                            if (campo == 4)
+                            {
+                                if (mazo.PosAumento[0].texture == null)
+                                {
+                                    mazo.PosAumento[0].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
-                                    break;
                                 }
                             }
-                        }
-                    }
-
-                    if (campocarta("Distancia", mazo.Hand, carta_mano))
-                    {
-                        if (campo == 2)
-                        {
-                            for (int i = 0; i < mazo.PosDistancia.Count; i++) //recorre pos distancia
+                            if (campo == 5)
                             {
-                                if (mazo.PosDistancia[i].texture == null) //verifica que las pos distancia no tengan una carta
+                                if (mazo.PosAumento[1].texture == null)
                                 {
-                                    mazo.PosDistancia[i].texture = imagecard.texture; //invocar la carta en distancia
+                                    mazo.PosAumento[1].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
-                                    break;
                                 }
                             }
-                        }
-                    }
-
-                    if (campocarta("Asedio", mazo.Hand, carta_mano))
-                    {
-                        if (campo == 3)
-                        {
-                            for (int i = 0; i < mazo.PosAsedio.Count; i++) //recorre pos asedio
+                            if (campo == 6)
                             {
-                                if (mazo.PosAsedio[i].texture == null) //verifica que las pos asedio no tengan una carta
+                                if (mazo.PosAumento[2].texture == null)
                                 {
-                                    mazo.PosAsedio[i].texture = imagecard.texture; //invocar la carta en asedio
+                                    mazo.PosAumento[2].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
-                                    break;
                                 }
                             }
                         }
-                    }
 
-                    if (campocarta("Aumento", mazo.Hand, carta_mano))
-                    {
-                        if (campo == 4)
+                        if (campocarta("Clima", mazo.Hand, carta_mano))
                         {
-                            if (mazo.PosAumento[0].texture == null)
+                            if (campo == 7)
                             {
-                                mazo.PosAumento[0].texture = imagecard.texture;
-                                imagecard.texture = null; //quita la carta de hand
-                                GameManager.ConfirmaTurno = true;
-                            }
-                        }
-                        if (campo == 5)
-                        {
-                            if (mazo.PosAumento[1].texture == null)
-                            {
-                                mazo.PosAumento[1].texture = imagecard.texture;
-                                imagecard.texture = null; //quita la carta de hand
-                                GameManager.ConfirmaTurno = true;
-                            }
-                        }
-                        if (campo == 6)
-                        {
-                            if (mazo.PosAumento[2].texture == null)
-                            {
-                                mazo.PosAumento[2].texture = imagecard.texture;
-                                imagecard.texture = null; //quita la carta de hand
-                                GameManager.ConfirmaTurno = true;
-                            }
-                        }
-                    }
-
-                    if (campocarta("Clima", mazo.Hand, carta_mano))
-                    {
-                        if (campo == 7)
-                        {
-                            if (mazo.PosClima[0].texture == null)
-                            {
-                                mazo.PosClima[0].texture = imagecard.texture;
-                                imagecard.texture = null; //quita la carta de hand
-                                GameManager.ConfirmaTurno = true;
-                            }
-                        }
-                        if (campo == 8)
-                        {
-                            if (mazo.PosClima[1].texture == null)
-                            {
-                                mazo.PosClima[1].texture = imagecard.texture;
-                                imagecard.texture = null; //quita la carta de hand
-                                GameManager.ConfirmaTurno = true;
-                            }
-                        }
-                        if (campo == 9)
-                        {
-                            if (mazo.PosClima[2].texture == null)
-                            {
-                                mazo.PosClima[2].texture = imagecard.texture;
-                                imagecard.texture = null; //quita la carta de hand
-                                GameManager.ConfirmaTurno = true;
-                            }
-                        }
-                    }
-
-                    if (campocarta("Despeje", mazo.Hand, carta_mano))
-                    {
-                        if (campo == 10)
-                        {
-                            for (int i = 0; i < mazo.PosClima.Count; i++)
-                            {
-                                if (mazo.PosClima[i].texture != null)
+                                if (mazo.PosClima[0].texture == null)
                                 {
-                                    mazo.PosClima[i].texture = null;
+                                    mazo.PosClima[0].texture = imagecard.texture;
+                                    imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
                                 }
-
-
                             }
-                            mazo.PosDespeje.texture = imagecard.texture;
-                            imagecard.texture = null;
+                            if (campo == 8)
+                            {
+                                if (mazo.PosClima[1].texture == null)
+                                {
+                                    mazo.PosClima[1].texture = imagecard.texture;
+                                    imagecard.texture = null; //quita la carta de hand
+                                    GameManager.ConfirmaTurno = true;
+                                }
+                            }
+                            if (campo == 9)
+                            {
+                                if (mazo.PosClima[2].texture == null)
+                                {
+                                    mazo.PosClima[2].texture = imagecard.texture;
+                                    imagecard.texture = null; //quita la carta de hand
+                                    GameManager.ConfirmaTurno = true;
+                                }
+                            }
+                        }
+
+                        if (campocarta("Despeje", mazo.Hand, carta_mano))
+                        {
+                            if (campo == 10)
+                            {
+                                for (int i = 0; i < mazo.PosClima.Count; i++)
+                                {
+                                    if (mazo.PosClima[i].texture != null)
+                                    {
+                                        mazo.PosClima[i].texture = null;
+                                        GameManager.ConfirmaTurno = true;
+                                    }
+
+
+                                }
+                                mazo.PosDespeje.texture = imagecard.texture;
+                                imagecard.texture = null;
+                            }
                         }
                     }
                 }
-
             }
 
 
             if (playerTurn == "Slyth" && GameManager.turn == playerTurn)
             {
-                if (imagecard.texture != null) //verifica que haya una imagen en la carta
+                if (GameManager.Slytherin == false)
                 {
-                    if (campocarta("Cuerpoacuerpo", mazo1.Hand, carta_mano))
+                    if (imagecard.texture != null) //verifica que haya una imagen en la carta
                     {
-                        if (campo == 1)
+                        if (campocarta("Cuerpoacuerpo", mazo1.Hand, carta_mano))
                         {
-                            for (int i = 0; i < mazo1.PosCuerpoacuerpo.Count; i++) //recorre pos cuerpoacuerpo
+                            if (campo == 1)
                             {
-                                if (mazo1.PosCuerpoacuerpo[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
+                                for (int i = 0; i < mazo1.PosCuerpoacuerpo.Count; i++) //recorre pos cuerpoacuerpo
                                 {
-                                    mazo1.PosCuerpoacuerpo[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
+                                    if (mazo1.PosCuerpoacuerpo[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
+                                    {
+                                        mazo1.PosCuerpoacuerpo[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
+                                        imagecard.texture = null; //quita la carta de hand
+                                        GameManager.ConfirmaTurno = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (campocarta("Distancia", mazo1.Hand, carta_mano))
+                        {
+                            if (campo == 2)
+                            {
+                                for (int i = 0; i < mazo1.PosDistancia.Count; i++) //recorre pos distancia
+                                {
+                                    if (mazo1.PosDistancia[i].texture == null) //verifica que las pos distancia no tengan una carta
+                                    {
+                                        mazo1.PosDistancia[i].texture = imagecard.texture; //invocar la carta en distancia
+                                        imagecard.texture = null; //quita la carta de hand
+                                        GameManager.ConfirmaTurno = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (campocarta("Asedio", mazo1.Hand, carta_mano))
+                        {
+                            if (campo == 3)
+                            {
+                                for (int i = 0; i < mazo1.PosAsedio.Count; i++) //recorre pos asedio
+                                {
+                                    if (mazo1.PosAsedio[i].texture == null) //verifica que las pos asedio no tengan una carta
+                                    {
+                                        mazo1.PosAsedio[i].texture = imagecard.texture; //invocar la carta en asedio
+                                        imagecard.texture = null; //quita la carta de hand
+                                        GameManager.ConfirmaTurno = true;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (campocarta("Aumento", mazo1.Hand, carta_mano))
+                        {
+                            if (campo == 4)
+                            {
+                                if (mazo1.PosAumento[0].texture == null)
+                                {
+                                    mazo1.PosAumento[0].texture = imagecard.texture;
+                                    imagecard.texture = null;
+                                    GameManager.ConfirmaTurno = true;
+                                }
+                            }
+                            if (campo == 5)
+                            {
+                                if (mazo1.PosAumento[1].texture == null)
+                                {
+                                    mazo1.PosAumento[1].texture = imagecard.texture;
+                                    imagecard.texture = null;
+                                    GameManager.ConfirmaTurno = true;
+                                }
+                            }
+                            if (campo == 6)
+                            {
+                                if (mazo1.PosAumento[2].texture == null)
+                                {
+                                    mazo1.PosAumento[2].texture = imagecard.texture;
+                                    imagecard.texture = null;
+                                    GameManager.ConfirmaTurno = true;
+                                }
+                            }
+                        }
+
+                        if (campocarta("Clima", mazo1.Hand, carta_mano))
+                        {
+                            if (campo == 7)
+                            {
+                                if (mazo1.PosClima[0].texture == null)
+                                {
+                                    mazo1.PosClima[0].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
-                                    break;
                                 }
                             }
-                        }
-                    }
-
-                    if (campocarta("Distancia", mazo1.Hand, carta_mano))
-                    {
-                        if (campo == 2)
-                        {
-                            for (int i = 0; i < mazo1.PosDistancia.Count; i++) //recorre pos distancia
+                            if (campo == 8)
                             {
-                                if (mazo1.PosDistancia[i].texture == null) //verifica que las pos distancia no tengan una carta
+                                if (mazo1.PosClima[1].texture == null)
                                 {
-                                    mazo1.PosDistancia[i].texture = imagecard.texture; //invocar la carta en distancia
+                                    mazo1.PosClima[1].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
-                                    break;
                                 }
                             }
-                        }
-                    }
-
-                    if (campocarta("Asedio", mazo1.Hand, carta_mano))
-                    {
-                        if (campo == 3)
-                        {
-                            for (int i = 0; i < mazo1.PosAsedio.Count; i++) //recorre pos asedio
+                            if (campo == 9)
                             {
-                                if (mazo1.PosAsedio[i].texture == null) //verifica que las pos asedio no tengan una carta
+                                if (mazo1.PosClima[2].texture == null)
                                 {
-                                    mazo1.PosAsedio[i].texture = imagecard.texture; //invocar la carta en asedio
+                                    mazo1.PosClima[2].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
-                                    break;
                                 }
                             }
                         }
-                    }
 
-                    if (campocarta("Aumento", mazo1.Hand, carta_mano))
-                    {
-                        if (campo == 4)
+                        if (campocarta("Despeje", mazo1.Hand, carta_mano))
                         {
-                            if (mazo1.PosAumento[0].texture == null)
+                            if (campo == 10)
                             {
-                                mazo1.PosAumento[0].texture = imagecard.texture;
-                                imagecard.texture = null;
-                                GameManager.ConfirmaTurno = true;
-                            }
-                        }
-                        if (campo == 5)
-                        {
-                            if (mazo1.PosAumento[1].texture == null)
-                            {
-                                mazo1.PosAumento[1].texture = imagecard.texture;
-                                imagecard.texture = null;
-                                GameManager.ConfirmaTurno = true;
-                            }
-                        }
-                        if (campo == 6)
-                        {
-                            if (mazo1.PosAumento[2].texture == null)
-                            {
-                                mazo1.PosAumento[2].texture = imagecard.texture;
-                                imagecard.texture = null;
-                                GameManager.ConfirmaTurno = true;
-                            }
-                        }
-                    }
-
-                    if (campocarta("Clima", mazo1.Hand, carta_mano))
-                    {
-                        if (campo == 7)
-                        {
-                            if (mazo1.PosClima[0].texture == null)
-                            {
-                                mazo1.PosClima[0].texture = imagecard.texture;
-                                imagecard.texture = null; //quita la carta de hand
-                                GameManager.ConfirmaTurno = true;
-                            }
-                        }
-                        if (campo == 8)
-                        {
-                            if (mazo1.PosClima[1].texture == null)
-                            {
-                                mazo1.PosClima[1].texture = imagecard.texture;
-                                imagecard.texture = null; //quita la carta de hand
-                                GameManager.ConfirmaTurno = true;
-                            }
-                        }
-                        if (campo == 9)
-                        {
-                            if (mazo1.PosClima[2].texture == null)
-                            {
-                                mazo1.PosClima[2].texture = imagecard.texture;
-                                imagecard.texture = null; //quita la carta de hand
-                                GameManager.ConfirmaTurno = true;
-                            }
-                        }
-                    }
-
-                    if (campocarta("Despeje", mazo1.Hand, carta_mano))
-                    {
-                        if (campo == 10)
-                        {
-                            for (int i = 0; i < mazo1.PosClima.Count; i++)
-                            {
-                                if (mazo1.PosClima[i].texture != null)
+                                for (int i = 0; i < mazo1.PosClima.Count; i++)
                                 {
-                                    mazo1.PosClima[i].texture = null;
-                                    GameManager.ConfirmaTurno = true;
+                                    if (mazo1.PosClima[i].texture != null)
+                                    {
+                                        mazo1.PosClima[i].texture = null;
+                                        GameManager.ConfirmaTurno = true;
 
+                                    }
                                 }
+                                mazo1.PosDespeje.texture = imagecard.texture;
+                                imagecard.texture = null;
                             }
-                            mazo1.PosDespeje.texture = imagecard.texture;
-                            imagecard.texture = null;
                         }
-                    }
 
+                    }
                 }
             }
            
