@@ -40,14 +40,3 @@ public enum Place{
         Señuelo,
         Cementerio,
     }
-
-    
-
-
-    /*public Card(string name, int points, Leaderfaction house, Kindofcard unidad, Place[] campo){
-        this.name = name;
-        this.points = points;
-        this.house = house;
-        this.unidad = unidad;
-        this.campo = campo;
-    }*/

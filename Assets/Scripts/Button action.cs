@@ -6,14 +6,16 @@ public class Buttonaction : MonoBehaviour
 {
     public GameObject panel;
     public cardaction Carta;
+    public GameManager GameManager;
     
     public void invocacion() 
         //activa el menu de opciones cuando se presiona el boton de invocacion
     {
-        gameObject.SetActive(false);
-        panel.SetActive(true);
-        panel.GetComponent<Buttonaction>().Carta = Carta;
-
+        
+            gameObject.SetActive(false);
+            panel.SetActive(true);
+            panel.GetComponent<Buttonaction>().Carta = Carta;
+        
     
     }
 

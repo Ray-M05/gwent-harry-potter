@@ -11,8 +11,6 @@ public class ChangeTurn : MonoBehaviour
     public GameObject HandG;
     public GameObject SlythReverse;
     public GameObject HandS;
-    public TextMeshProUGUI PointsGryff;
-    public TextMeshProUGUI PointsSlyth;
 
 
     public void cambioturno()
@@ -42,5 +40,6 @@ public class ChangeTurn : MonoBehaviour
         }
         GameManager.ConfirmaTurno = false;
     }
+
 
 }

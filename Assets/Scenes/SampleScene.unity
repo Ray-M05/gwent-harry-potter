@@ -2693,7 +2693,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2787,8 +2787,6 @@ MonoBehaviour:
   HandG: {fileID: 0}
   SlythReverse: {fileID: 0}
   HandS: {fileID: 0}
-  PointsGryff: {fileID: 0}
-  PointsSlyth: {fileID: 0}
 --- !u!1 &386349994
 GameObject:
   m_ObjectHideFlags: 0
@@ -6016,7 +6014,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6110,8 +6108,6 @@ MonoBehaviour:
   HandG: {fileID: 0}
   SlythReverse: {fileID: 0}
   HandS: {fileID: 0}
-  PointsGryff: {fileID: 0}
-  PointsSlyth: {fileID: 0}
 --- !u!1 &959048280
 GameObject:
   m_ObjectHideFlags: 0
@@ -9330,8 +9326,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ConfirmaTurno: 0
   turn: Gryff
+  PointsGryff: {fileID: 958391917}
+  PointsSlyth: {fileID: 364792755}
   Gryffindor: 0
   Slytherin: 0
+  Points_Gryffindor_C: []
+  Points_Gryffindor_D: []
+  Points_Gryffindor_A: []
+  Points_Gryffindor_Aumento_C: {fileID: 0}
+  Points_Gryffindor_Aumento_D: {fileID: 0}
+  Points_Gryffindor_Aumento_A: {fileID: 0}
+  Points_Gryffindor_Clima_C: {fileID: 0}
+  Points_Gryffindor_Clima_D: {fileID: 0}
+  Points_Gryffindor_Clima_A: {fileID: 0}
+  Points_Slytherin_C: []
+  Points_Slytherin_D: []
+  Points_Slytherin_A: []
+  Points_Slytherin_Aumento_C: {fileID: 0}
+  Points_Slytherin_Aumento_D: {fileID: 0}
+  Points_Slytherin_Aumento_A: {fileID: 0}
+  Points_Slytherin_Clima_C: {fileID: 0}
+  Points_Slytherin_Clima_D: {fileID: 0}
+  Points_Slytherin_Clima_A: {fileID: 0}
 --- !u!4 &1432765894
 Transform:
   m_ObjectHideFlags: 0
@@ -11663,8 +11679,6 @@ MonoBehaviour:
   HandG: {fileID: 1224648052}
   SlythReverse: {fileID: 1867222941}
   HandS: {fileID: 85932135}
-  PointsGryff: {fileID: 958391917}
-  PointsSlyth: {fileID: 364792755}
 --- !u!1 &1935169073
 GameObject:
   m_ObjectHideFlags: 0

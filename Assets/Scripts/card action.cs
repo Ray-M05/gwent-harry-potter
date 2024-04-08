@@ -33,32 +33,36 @@ public class cardaction : MonoBehaviour
 
     public void Opciones()  //funcion del boton de carta
     {
-        panel_opciones.SetActive(true);  //activa el panel de opciones cuando toca la carta
-        panel_invocaciones.SetActive(false);
-        panel_opciones.GetComponent<Buttonaction>().Carta = GetComponent<cardaction>();
-        
-        cardvisual.texture = imagecard.texture;  //le pasa la foto de la carta al cardvisual
-        cardvisual.transform.localScale = new Vector2(1, 1);
+        if(playerTurn == GameManager.turn)
+        {
+            panel_opciones.SetActive(true);  //activa el panel de opciones cuando toca la carta
+            panel_invocaciones.SetActive(false);
+            panel_opciones.GetComponent<Buttonaction>().Carta = GetComponent<cardaction>();
 
-        cardescription.text = "";
-        description_.transform.localScale = new Vector2(1, 1);
-        if (playerTurn == "Gryff")
-        {
-            for (int i = 0; i < mazo.Hand[carta_mano].GetComponent<Card>().campo.Length; i++)
-            {
-                cardescription.text += mazo.Hand[carta_mano].GetComponent<Card>().campo[i].ToString();
-                cardescription.text += "\n";
-            }
-        }
-        else if (playerTurn == "Slyth")
-        {
+            cardvisual.texture = imagecard.texture;  //le pasa la foto de la carta al cardvisual
+            cardvisual.transform.localScale = new Vector2(1, 1);
+
             cardescription.text = "";
-            for (int i = 0; i < mazo1.Hand[carta_mano].GetComponent<Card>().campo.Length; i++)
+            description_.transform.localScale = new Vector2(1, 1);
+            if (playerTurn == "Gryff")
             {
-                cardescription.text += mazo1.Hand[carta_mano].GetComponent<Card>().campo[i].ToString();
-                cardescription.text += "\n";
+                for (int i = 0; i < mazo.Hand[carta_mano].GetComponent<Card>().campo.Length; i++)
+                {
+                    cardescription.text += mazo.Hand[carta_mano].GetComponent<Card>().campo[i].ToString();
+                    cardescription.text += "\n";
+                }
+            }
+            else if (playerTurn == "Slyth")
+            {
+                cardescription.text = "";
+                for (int i = 0; i < mazo1.Hand[carta_mano].GetComponent<Card>().campo.Length; i++)
+                {
+                    cardescription.text += mazo1.Hand[carta_mano].GetComponent<Card>().campo[i].ToString();
+                    cardescription.text += "\n";
+                }
             }
         }
+        
     }
     public void invocar(int campo) //un numero que sera cuerpoacuerpo, distancia o asedio
     {
@@ -81,6 +85,7 @@ public class cardaction : MonoBehaviour
                                         mazo.PosCuerpoacuerpo[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
                                         imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
+                                        GameManager.Points_Gryffindor_C.Add(mazo.Hand[carta_mano].GetComponent<Card>());
                                         break;
                                     }
                                 }
@@ -98,6 +103,7 @@ public class cardaction : MonoBehaviour
                                         mazo.PosDistancia[i].texture = imagecard.texture; //invocar la carta en distancia
                                         imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
+                                        GameManager.Points_Gryffindor_D.Add(mazo.Hand[carta_mano].GetComponent<Card>());
                                         break;
                                     }
                                 }
@@ -115,6 +121,7 @@ public class cardaction : MonoBehaviour
                                         mazo.PosAsedio[i].texture = imagecard.texture; //invocar la carta en asedio
                                         imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
+                                        GameManager.Points_Gryffindor_A.Add(mazo.Hand[carta_mano].GetComponent<Card>());
                                         break;
                                     }
                                 }
@@ -130,6 +137,7 @@ public class cardaction : MonoBehaviour
                                     mazo.PosAumento[0].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
+                                    GameManager.Points_Gryffindor_Aumento_C = mazo.Hand[carta_mano].GetComponent<Card>();
                                 }
                             }
                             if (campo == 5)
@@ -139,6 +147,7 @@ public class cardaction : MonoBehaviour
                                     mazo.PosAumento[1].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
+                                    GameManager.Points_Gryffindor_Aumento_D = mazo.Hand[carta_mano].GetComponent<Card>();
                                 }
                             }
                             if (campo == 6)
@@ -148,6 +157,7 @@ public class cardaction : MonoBehaviour
                                     mazo.PosAumento[2].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
+                                    GameManager.Points_Gryffindor_Aumento_A = mazo.Hand[carta_mano].GetComponent<Card>();
                                 }
                             }
                         }
@@ -161,6 +171,7 @@ public class cardaction : MonoBehaviour
                                     mazo.PosClima[0].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
+                                    GameManager.Points_Gryffindor_Clima_C = mazo.Hand[carta_mano].GetComponent<Card>();
                                 }
                             }
                             if (campo == 8)
@@ -170,6 +181,7 @@ public class cardaction : MonoBehaviour
                                     mazo.PosClima[1].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
+                                    GameManager.Points_Gryffindor_Clima_D = mazo.Hand[carta_mano].GetComponent<Card>();
                                 }
                             }
                             if (campo == 9)
@@ -179,6 +191,7 @@ public class cardaction : MonoBehaviour
                                     mazo.PosClima[2].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
+                                    GameManager.Points_Gryffindor_Clima_A = mazo.Hand[carta_mano].GetComponent<Card>();
                                 }
                             }
                         }
@@ -193,6 +206,9 @@ public class cardaction : MonoBehaviour
                                     {
                                         mazo.PosClima[i].texture = null;
                                         GameManager.ConfirmaTurno = true;
+                                        GameManager.Points_Gryffindor_Clima_A = null;
+                                        GameManager.Points_Gryffindor_Clima_D = null;
+                                        GameManager.Points_Gryffindor_Clima_C = null;
                                     }
 
 
@@ -223,6 +239,7 @@ public class cardaction : MonoBehaviour
                                         mazo1.PosCuerpoacuerpo[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
                                         imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
+                                        GameManager.Points_Slytherin_C.Add(mazo1.Hand[carta_mano].GetComponent<Card>());
                                         break;
                                     }
                                 }
@@ -240,6 +257,7 @@ public class cardaction : MonoBehaviour
                                         mazo1.PosDistancia[i].texture = imagecard.texture; //invocar la carta en distancia
                                         imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
+                                        GameManager.Points_Slytherin_D.Add(mazo1.Hand[carta_mano].GetComponent<Card>());
                                         break;
                                     }
                                 }
@@ -257,6 +275,7 @@ public class cardaction : MonoBehaviour
                                         mazo1.PosAsedio[i].texture = imagecard.texture; //invocar la carta en asedio
                                         imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
+                                        GameManager.Points_Slytherin_A.Add(mazo1.Hand[carta_mano].GetComponent<Card>());
                                         break;
                                     }
                                 }
@@ -272,6 +291,7 @@ public class cardaction : MonoBehaviour
                                     mazo1.PosAumento[0].texture = imagecard.texture;
                                     imagecard.texture = null;
                                     GameManager.ConfirmaTurno = true;
+                                    GameManager.Points_Slytherin_Aumento_C = mazo1.Hand[carta_mano].GetComponent<Card>();
                                 }
                             }
                             if (campo == 5)
@@ -281,6 +301,7 @@ public class cardaction : MonoBehaviour
                                     mazo1.PosAumento[1].texture = imagecard.texture;
                                     imagecard.texture = null;
                                     GameManager.ConfirmaTurno = true;
+                                    GameManager.Points_Slytherin_Aumento_D = mazo1.Hand[carta_mano].GetComponent<Card>();
                                 }
                             }
                             if (campo == 6)
@@ -290,6 +311,7 @@ public class cardaction : MonoBehaviour
                                     mazo1.PosAumento[2].texture = imagecard.texture;
                                     imagecard.texture = null;
                                     GameManager.ConfirmaTurno = true;
+                                    GameManager.Points_Slytherin_Aumento_A = mazo1.Hand[carta_mano].GetComponent<Card>();
                                 }
                             }
                         }
@@ -303,6 +325,7 @@ public class cardaction : MonoBehaviour
                                     mazo1.PosClima[0].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
+                                    GameManager.Points_Slytherin_Clima_C = mazo1.Hand[carta_mano].GetComponent<Card>();
                                 }
                             }
                             if (campo == 8)
@@ -312,6 +335,7 @@ public class cardaction : MonoBehaviour
                                     mazo1.PosClima[1].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
+                                    GameManager.Points_Slytherin_Clima_D = mazo1.Hand[carta_mano].GetComponent<Card>();
                                 }
                             }
                             if (campo == 9)
@@ -321,6 +345,7 @@ public class cardaction : MonoBehaviour
                                     mazo1.PosClima[2].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
+                                    GameManager.Points_Slytherin_Clima_A = mazo1.Hand[carta_mano].GetComponent<Card>();
                                 }
                             }
                         }
@@ -335,6 +360,9 @@ public class cardaction : MonoBehaviour
                                     {
                                         mazo1.PosClima[i].texture = null;
                                         GameManager.ConfirmaTurno = true;
+                                        GameManager.Points_Slytherin_Clima_A = null;
+                                        GameManager.Points_Slytherin_Clima_D = null;
+                                        GameManager.Points_Slytherin_Clima_C = null;
 
                                     }
                                 }
