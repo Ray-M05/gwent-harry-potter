@@ -24,7 +24,6 @@ public class ChangeTurn : MonoBehaviour
             }
                 GameManager.turn = "Slyth";
                 GryffReverse.SetActive(true);
-                //HandG.SetActive(false);
                 SlythReverse.SetActive(false);            
         }
         else
@@ -36,7 +35,6 @@ public class ChangeTurn : MonoBehaviour
             GameManager.turn = "Gryff";
             GryffReverse.SetActive(false);
             SlythReverse.SetActive(true);
-            //HandS.SetActive(false);
         }
         GameManager.ConfirmaTurno = false;
     }
