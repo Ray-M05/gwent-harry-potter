@@ -102,3 +102,6 @@ MonoBehaviour:
   unidad: 3
   campo: 04000000
   name: Varita de Sauco
+  hability: 8
+  description_skills: bonifican la fila seleccionada aumentando en 2 el poder de
+    cada carta en el campo propio

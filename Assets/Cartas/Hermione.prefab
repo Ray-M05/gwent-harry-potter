@@ -100,5 +100,7 @@ MonoBehaviour:
   points: 3
   house: 0
   unidad: 1
-  campo: 02000000
+  campo: 0100000000000000
   name: Hermione
+  hability: 9
+  description_skills: 

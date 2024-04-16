@@ -102,3 +102,5 @@ MonoBehaviour:
   unidad: 0
   campo: 000000000200000001000000
   name: Dolores Umbridge
+  hability: 9
+  description_skills: No es faectada por ninguna habilidad

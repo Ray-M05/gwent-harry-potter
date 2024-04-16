@@ -102,3 +102,5 @@ MonoBehaviour:
   unidad: 4
   campo: 05000000
   name: Patronus
+  hability: 8
+  description_skills: elimina todas las unidades de clima del campo

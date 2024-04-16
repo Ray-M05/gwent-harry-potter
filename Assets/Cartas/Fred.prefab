@@ -102,3 +102,6 @@ MonoBehaviour:
   unidad: 1
   campo: 00000000
   name: Fred
+  hability: 7
+  description_skills: calcula el promedio de poder entre todas las cartas del campo
+    propio y lo iguala al poder de todas las cartas

@@ -102,3 +102,5 @@ MonoBehaviour:
   unidad: 1
   campo: 02000000
   name: Neville
+  hability: 3
+  description_skills: elimina la carta con menor poder del campo del rival

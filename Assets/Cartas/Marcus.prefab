@@ -102,3 +102,6 @@ MonoBehaviour:
   unidad: 1
   campo: 01000000
   name: Marcus Flint
+  hability: 1
+  description_skills: agrega una unidad de clima a la fila de la carta que posee
+    la habilidad

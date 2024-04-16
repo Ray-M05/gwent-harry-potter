@@ -102,3 +102,6 @@ MonoBehaviour:
   unidad: 1
   campo: 01000000
   name: Ginny
+  hability: 0
+  description_skills: agrega una unidad de aumento a la fila de la carta que posee
+    la habilidad

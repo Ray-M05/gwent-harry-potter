@@ -102,3 +102,5 @@ MonoBehaviour:
   unidad: 1
   campo: 02000000
   name: Ron
+  hability: 5
+  description_skills: multiplica su poder por la cantidad de cartas iguales a ella

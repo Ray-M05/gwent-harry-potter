@@ -102,3 +102,6 @@ MonoBehaviour:
   unidad: 5
   campo: 06000000000000000200000001000000
   name: Sr Nicholas
+  hability: 8
+  description_skills: coloca una carta con poder 0 en el lugar de la carta con mayor
+    poder de la fila seleccionada y regresa a la mano

@@ -100,5 +100,7 @@ MonoBehaviour:
   points: 4
   house: 1
   unidad: 1
-  campo: 0000000002000000
+  campo: 0000000001000000
   name: Draco Malfoy
+  hability: 9
+  description_skills: 

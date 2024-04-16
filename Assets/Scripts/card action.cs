@@ -86,6 +86,7 @@ public class cardaction : MonoBehaviour
                                         imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
                                         GameManager.Points_Gryffindor_C.Add(mazo.Hand[carta_mano].GetComponent<Card>());
+                                        mazo.Hand.RemoveAt(carta_mano);
                                         break;
                                     }
                                 }
@@ -202,16 +203,11 @@ public class cardaction : MonoBehaviour
                             {
                                 for (int i = 0; i < mazo.PosClima.Count; i++)
                                 {
-                                    if (mazo.PosClima[i].texture != null)
-                                    {
                                         mazo.PosClima[i].texture = null;
                                         GameManager.ConfirmaTurno = true;
                                         GameManager.Points_Gryffindor_Clima_A = null;
                                         GameManager.Points_Gryffindor_Clima_D = null;
                                         GameManager.Points_Gryffindor_Clima_C = null;
-                                    }
-
-
                                 }
                                 mazo.PosDespeje.texture = imagecard.texture;
                                 imagecard.texture = null;
@@ -356,15 +352,11 @@ public class cardaction : MonoBehaviour
                             {
                                 for (int i = 0; i < mazo1.PosClima.Count; i++)
                                 {
-                                    if (mazo1.PosClima[i].texture != null)
-                                    {
                                         mazo1.PosClima[i].texture = null;
                                         GameManager.ConfirmaTurno = true;
                                         GameManager.Points_Slytherin_Clima_A = null;
                                         GameManager.Points_Slytherin_Clima_D = null;
-                                        GameManager.Points_Slytherin_Clima_C = null;
-
-                                    }
+                                        GameManager.Points_Slytherin_Clima_C = null;  
                                 }
                                 mazo1.PosDespeje.texture = imagecard.texture;
                                 imagecard.texture = null;
@@ -389,5 +381,25 @@ public class cardaction : MonoBehaviour
         }
         
         return false;
+    }
+
+    public void end_round()
+    {
+        clean_scene(mazo);
+        clean_scene(mazo1);
+    }
+    public void clean_scene(hogwartsdeck generica)
+    {
+        for (int i = 0; i < generica.PosCuerpoacuerpo.Count; i++)
+        {
+            generica.PosCuerpoacuerpo[i].texture = null;
+            generica.PosDistancia[i].texture = null;
+            generica.PosAsedio[i].texture = null;
+        }
+        for (int i = 0; i < generica.PosClima.Count; i++)
+        {
+            generica.PosClima[i].texture = null;
+            generica.PosAumento[i].texture = null;
+        }
     }
 }

@@ -100,5 +100,7 @@ MonoBehaviour:
   points: 3
   house: 1
   unidad: 1
-  campo: 0200000001000000
+  campo: 02000000
   name: Blaise Zabini
+  hability: 2
+  description_skills: elimina la carta con mayor poder del campo del rival

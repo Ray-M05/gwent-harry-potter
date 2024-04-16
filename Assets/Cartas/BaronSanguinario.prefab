@@ -100,5 +100,7 @@ MonoBehaviour:
   points: 2
   house: 1
   unidad: 1
-  campo: 02000000
+  campo: 00000000
   name: Baron Sanguinario
+  hability: 4
+  description_skills: roba una carta
