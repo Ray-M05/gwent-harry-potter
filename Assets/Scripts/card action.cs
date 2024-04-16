@@ -18,6 +18,7 @@ public class cardaction : MonoBehaviour
     public TextMeshProUGUI cardescription;
     public GameObject description_;
     public GameManager GameManager;
+    public hogwartsdeck hogwartsdeck;
     
     private void Start()
     {
@@ -105,6 +106,7 @@ public class cardaction : MonoBehaviour
                                         imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
                                         GameManager.Points_Gryffindor_D.Add(mazo.Hand[carta_mano].GetComponent<Card>());
+                                        mazo.Hand.RemoveAt(carta_mano);
                                         break;
                                     }
                                 }
@@ -123,6 +125,7 @@ public class cardaction : MonoBehaviour
                                         imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
                                         GameManager.Points_Gryffindor_A.Add(mazo.Hand[carta_mano].GetComponent<Card>());
+                                        mazo.Hand.RemoveAt(carta_mano);
                                         break;
                                     }
                                 }
@@ -139,6 +142,7 @@ public class cardaction : MonoBehaviour
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
                                     GameManager.Points_Gryffindor_Aumento_C = mazo.Hand[carta_mano].GetComponent<Card>();
+                                    mazo.Hand.RemoveAt(carta_mano);
                                 }
                             }
                             if (campo == 5)
@@ -149,6 +153,7 @@ public class cardaction : MonoBehaviour
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
                                     GameManager.Points_Gryffindor_Aumento_D = mazo.Hand[carta_mano].GetComponent<Card>();
+                                    mazo.Hand.RemoveAt(carta_mano);
                                 }
                             }
                             if (campo == 6)
@@ -159,6 +164,7 @@ public class cardaction : MonoBehaviour
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
                                     GameManager.Points_Gryffindor_Aumento_A = mazo.Hand[carta_mano].GetComponent<Card>();
+                                    mazo.Hand.RemoveAt(carta_mano);
                                 }
                             }
                         }
@@ -173,6 +179,7 @@ public class cardaction : MonoBehaviour
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
                                     GameManager.Points_Gryffindor_Clima_C = mazo.Hand[carta_mano].GetComponent<Card>();
+                                    mazo.Hand.RemoveAt(carta_mano);
                                 }
                             }
                             if (campo == 8)
@@ -183,6 +190,7 @@ public class cardaction : MonoBehaviour
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
                                     GameManager.Points_Gryffindor_Clima_D = mazo.Hand[carta_mano].GetComponent<Card>();
+                                    mazo.Hand.RemoveAt(carta_mano);
                                 }
                             }
                             if (campo == 9)
@@ -193,6 +201,7 @@ public class cardaction : MonoBehaviour
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
                                     GameManager.Points_Gryffindor_Clima_A = mazo.Hand[carta_mano].GetComponent<Card>();
+                                    mazo.Hand.RemoveAt(carta_mano);
                                 }
                             }
                         }
@@ -211,6 +220,7 @@ public class cardaction : MonoBehaviour
                                 }
                                 mazo.PosDespeje.texture = imagecard.texture;
                                 imagecard.texture = null;
+                                mazo.Hand.RemoveAt(carta_mano);
                             }
                         }
                     }
@@ -236,6 +246,7 @@ public class cardaction : MonoBehaviour
                                         imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
                                         GameManager.Points_Slytherin_C.Add(mazo1.Hand[carta_mano].GetComponent<Card>());
+                                        mazo1.Hand.RemoveAt(carta_mano);
                                         break;
                                     }
                                 }
@@ -254,6 +265,7 @@ public class cardaction : MonoBehaviour
                                         imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
                                         GameManager.Points_Slytherin_D.Add(mazo1.Hand[carta_mano].GetComponent<Card>());
+                                        mazo1.Hand.RemoveAt(carta_mano);
                                         break;
                                     }
                                 }
@@ -272,6 +284,7 @@ public class cardaction : MonoBehaviour
                                         imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
                                         GameManager.Points_Slytherin_A.Add(mazo1.Hand[carta_mano].GetComponent<Card>());
+                                        mazo1.Hand.RemoveAt(carta_mano);
                                         break;
                                     }
                                 }
@@ -288,6 +301,7 @@ public class cardaction : MonoBehaviour
                                     imagecard.texture = null;
                                     GameManager.ConfirmaTurno = true;
                                     GameManager.Points_Slytherin_Aumento_C = mazo1.Hand[carta_mano].GetComponent<Card>();
+                                    mazo1.Hand.RemoveAt(carta_mano);
                                 }
                             }
                             if (campo == 5)
@@ -298,6 +312,7 @@ public class cardaction : MonoBehaviour
                                     imagecard.texture = null;
                                     GameManager.ConfirmaTurno = true;
                                     GameManager.Points_Slytherin_Aumento_D = mazo1.Hand[carta_mano].GetComponent<Card>();
+                                    mazo1.Hand.RemoveAt(carta_mano);
                                 }
                             }
                             if (campo == 6)
@@ -308,6 +323,7 @@ public class cardaction : MonoBehaviour
                                     imagecard.texture = null;
                                     GameManager.ConfirmaTurno = true;
                                     GameManager.Points_Slytherin_Aumento_A = mazo1.Hand[carta_mano].GetComponent<Card>();
+                                    mazo1.Hand.RemoveAt(carta_mano);
                                 }
                             }
                         }
@@ -322,6 +338,7 @@ public class cardaction : MonoBehaviour
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
                                     GameManager.Points_Slytherin_Clima_C = mazo1.Hand[carta_mano].GetComponent<Card>();
+                                    mazo1.Hand.RemoveAt(carta_mano);
                                 }
                             }
                             if (campo == 8)
@@ -332,6 +349,7 @@ public class cardaction : MonoBehaviour
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
                                     GameManager.Points_Slytherin_Clima_D = mazo1.Hand[carta_mano].GetComponent<Card>();
+                                    mazo1.Hand.RemoveAt(carta_mano);
                                 }
                             }
                             if (campo == 9)
@@ -342,6 +360,7 @@ public class cardaction : MonoBehaviour
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
                                     GameManager.Points_Slytherin_Clima_A = mazo1.Hand[carta_mano].GetComponent<Card>();
+                                    mazo1.Hand.RemoveAt(carta_mano);
                                 }
                             }
                         }
@@ -360,6 +379,7 @@ public class cardaction : MonoBehaviour
                                 }
                                 mazo1.PosDespeje.texture = imagecard.texture;
                                 imagecard.texture = null;
+                                mazo1.Hand.RemoveAt(carta_mano);
                             }
                         }
 
@@ -383,23 +403,4 @@ public class cardaction : MonoBehaviour
         return false;
     }
 
-    public void end_round()
-    {
-        clean_scene(mazo);
-        clean_scene(mazo1);
-    }
-    public void clean_scene(hogwartsdeck generica)
-    {
-        for (int i = 0; i < generica.PosCuerpoacuerpo.Count; i++)
-        {
-            generica.PosCuerpoacuerpo[i].texture = null;
-            generica.PosDistancia[i].texture = null;
-            generica.PosAsedio[i].texture = null;
-        }
-        for (int i = 0; i < generica.PosClima.Count; i++)
-        {
-            generica.PosClima[i].texture = null;
-            generica.PosAumento[i].texture = null;
-        }
-    }
 }

@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI RoundsSlyth;
     public cardaction cardaction;
     public hogwartsdeck hogwartsdeck;
+    hogwartsdeck mazo;
+    hogwartsdeck mazo1;
 
     public bool Gryffindor = false;
     public bool Slytherin = false;
@@ -40,6 +42,13 @@ public class GameManager : MonoBehaviour
     public Card Points_Slytherin_Clima_D = null;
     public Card Points_Slytherin_Clima_A = null;
 
+    private void Start()
+    {
+        mazo = GameObject.FindGameObjectWithTag("Gryffindor").GetComponent<hogwartsdeck>(); //inicializa el mazo de gryffindor
+        mazo1 = GameObject.FindGameObjectWithTag("Slytherin").GetComponent<hogwartsdeck>(); //inicializa el mazo de slytherin
+        RoundsGryff.text = "0";
+        RoundsSlyth.text = "0";
+    }
     private void Update()
     {
         contador();
@@ -257,8 +266,6 @@ public class GameManager : MonoBehaviour
 
     public void new_round()
     {
-        RoundsGryff.text = "0";
-        RoundsSlyth.text = "0";
         if (Gryffindor == true && Slytherin ==true)
        {
             if (int.Parse(PointsGryff.text) >= int.Parse(PointsSlyth.text))
@@ -267,7 +274,8 @@ public class GameManager : MonoBehaviour
                int pointA= int.Parse(text) ;
                pointA ++;
                RoundsGryff.text = pointA.ToString();
-                turn = "Gryff";
+                turn = "Slyth";
+                
             }
             else
             {
@@ -275,11 +283,10 @@ public class GameManager : MonoBehaviour
                 int pointB = int.Parse(text);
                 pointB++;
                 RoundsSlyth.text = pointB.ToString();
-                turn = "Slyth";
+                turn = "Gryff";
             }
             PointsGryff.text = "0";
             PointsSlyth.text = "0";
-            cardaction.end_round();
             Points_Gryffindor_C.Clear();
             Points_Gryffindor_D.Clear();
             Points_Gryffindor_A.Clear();
@@ -299,12 +306,38 @@ public class GameManager : MonoBehaviour
             Points_Slytherin_Clima_A = null;
             Points_Slytherin_Clima_D = null;
             Points_Slytherin_Clima_C = null;
-            cardaction.end_round();
+            end_round();
+            Gryffindor = false;
+            Slytherin = false;
+            mazo.rob(2);
+            mazo1.rob(2);
         }
        
         
 
     }
 
-    
+    public void end_round()
+
+    {
+        clean_scene(mazo);
+        clean_scene(mazo1);
+    }
+
+    public void clean_scene(hogwartsdeck generica)
+    {
+        for (int i = 0; i < generica.PosCuerpoacuerpo.Count; i++)
+        {
+            generica.PosCuerpoacuerpo[i].texture = null;
+            generica.PosDistancia[i].texture = null;
+            generica.PosAsedio[i].texture = null;
+        }
+        for (int i = 0; i < generica.PosClima.Count; i++)
+        {
+            generica.PosClima[i].texture = null;
+            generica.PosAumento[i].texture = null;
+        }
+    }
+
+
 }

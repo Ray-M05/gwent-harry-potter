@@ -15,20 +15,23 @@ public class hogwartsdeck : MonoBehaviour
     public List<RawImage> PosClima = new List<RawImage>();
     public RawImage PosDespeje;
     public List<GameObject> Cementerio = new List<GameObject>();
+    public RawImage default_texture;
 
     private void Start()
     {
         Deck = Shuffle();
         rob(10);
         muestracarta();
+        default_texture = GameObject.FindGameObjectWithTag("default texture").GetComponent<RawImage>();
     }
     private void Update()
     {
         verificards();
+        muestracarta();
     }
     public void rob(int count)  //metodo de robar cartas del deck
     {
-        for (int i = 0; i < count; i++) //va a recorrer el numero de cartas que se robaran 
+        for (int i = 0; (Hand.Count < 10)&& count>0; i++,count--) //va a recorrer el numero de cartas que se robaran 
         {
             Hand.Add(Deck[i]); //agrega las cartas de la mano al deck
         }
@@ -58,6 +61,7 @@ public class hogwartsdeck : MonoBehaviour
         for (int i = 0; i < Pos.Count; i++)
         {
             //lleva la imagen de la carta de la mano a la posicion i en blanco del tablero
+            Pos[i].GetComponent<RawImage>().texture = null;
             Pos[i].GetComponent<RawImage>().texture = Hand[i].GetComponent<SpriteRenderer>().sprite.texture; 
         }
     }

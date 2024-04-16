@@ -8,6 +8,7 @@ TagManager:
   - cardvisual
   - cardescription
   - Slytherin
+  - default texture
   layers:
   - Default
   - TransparentFX
