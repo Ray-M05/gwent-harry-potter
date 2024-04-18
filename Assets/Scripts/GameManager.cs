@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using static UnityEditor.PlayerSettings;
 
 public class GameManager : MonoBehaviour
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
     public hogwartsdeck hogwartsdeck;
     hogwartsdeck mazo;
     hogwartsdeck mazo1;
+    public GameObject WinnerG;
+    public GameObject WinnerS;
 
     public bool Gryffindor = false;
     public bool Slytherin = false;
@@ -53,6 +56,7 @@ public class GameManager : MonoBehaviour
     {
         contador();
         new_round();
+        winner();
     }
     public void contador()
     {
@@ -274,16 +278,16 @@ public class GameManager : MonoBehaviour
                int pointA= int.Parse(text) ;
                pointA ++;
                RoundsGryff.text = pointA.ToString();
-                turn = "Slyth";
+                //turn = "Slyth";
                 
             }
-            else
+            if (int.Parse(PointsGryff.text) <= int.Parse(PointsSlyth.text))
             {
-            string text = RoundsGryff.text;
+            string text = RoundsSlyth.text;
                 int pointB = int.Parse(text);
                 pointB++;
                 RoundsSlyth.text = pointB.ToString();
-                turn = "Gryff";
+                //turn = "Gryff";
             }
             PointsGryff.text = "0";
             PointsSlyth.text = "0";
@@ -312,9 +316,6 @@ public class GameManager : MonoBehaviour
             mazo.rob(2);
             mazo1.rob(2);
         }
-       
-        
-
     }
 
     public void end_round()
@@ -337,7 +338,18 @@ public class GameManager : MonoBehaviour
             generica.PosClima[i].texture = null;
             generica.PosAumento[i].texture = null;
         }
+        generica.PosDespeje.texture = null;
     }
 
-
+    public void winner()
+    {
+        if (RoundsGryff.text == "3")
+        {
+            WinnerG.SetActive(true);
+        }
+        if (RoundsSlyth.text == "3")
+        {
+            WinnerS.SetActive(true);
+        }
+    }
 }

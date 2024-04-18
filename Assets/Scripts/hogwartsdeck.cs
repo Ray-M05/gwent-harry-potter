@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ public class hogwartsdeck : MonoBehaviour
     public List<GameObject> Deck = new List<GameObject>();
     public List<RawImage> Pos = new List<RawImage>();
     public List<GameObject> Hand = new List<GameObject>();
+    public List <TextMeshProUGUI> P0ints = new List<TextMeshProUGUI>();
     public List<RawImage> PosCuerpoacuerpo = new List<RawImage>();
     public List<RawImage> PosDistancia = new List<RawImage>();
     public List<RawImage> PosAsedio = new List<RawImage>();
@@ -15,14 +17,12 @@ public class hogwartsdeck : MonoBehaviour
     public List<RawImage> PosClima = new List<RawImage>();
     public RawImage PosDespeje;
     public List<GameObject> Cementerio = new List<GameObject>();
-    public RawImage default_texture;
 
     private void Start()
     {
         Deck = Shuffle();
         rob(10);
-        muestracarta();
-        default_texture = GameObject.FindGameObjectWithTag("default texture").GetComponent<RawImage>();
+        muestracarta();    
     }
     private void Update()
     {
@@ -34,11 +34,9 @@ public class hogwartsdeck : MonoBehaviour
         for (int i = 0; (Hand.Count < 10)&& count>0; i++,count--) //va a recorrer el numero de cartas que se robaran 
         {
             Hand.Add(Deck[i]); //agrega las cartas de la mano al deck
+            Deck.RemoveAt(0);
         }
-        for (int i = 0; i < count; i++)
-        {
-            Deck.RemoveAt(0); //remueve esa misma carta del deck
-        }
+        
     }
 
     public List<GameObject> Shuffle()
@@ -62,9 +60,10 @@ public class hogwartsdeck : MonoBehaviour
         {
             //lleva la imagen de la carta de la mano a la posicion i en blanco del tablero
             Pos[i].GetComponent<RawImage>().texture = null;
-            Pos[i].GetComponent<RawImage>().texture = Hand[i].GetComponent<SpriteRenderer>().sprite.texture; 
+            Pos[i].GetComponent<RawImage>().texture = Hand[i].GetComponent<SpriteRenderer>().sprite.texture;
         }
     }
+
 
     public void verificards() //metodo que verifica si hay cartas en las posiciones
     {
@@ -127,6 +126,7 @@ public class hogwartsdeck : MonoBehaviour
             if (Pos[i].texture == null)
             {
                 Pos[i].transform.localScale = new Vector2(0, 0);
+                P0ints[i].text = null; //no recorre los puntos si no hay  una carta en la mano
             }
             else
             {

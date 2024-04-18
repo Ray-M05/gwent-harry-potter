@@ -16,13 +16,13 @@ public class ChangeTurn : MonoBehaviour
     public void cambioturno()
     {
 
-        if (GameManager.turn == "Gryff")
+        if (GameManager.turn == "Gryff") //si el turno es de gryffindor
         {
             if (GameManager.ConfirmaTurno == false)
             {
                 GameManager.Gryffindor = true;
             }
-                GameManager.turn = "Slyth";
+                GameManager.turn = "Slyth"; //cambia turno a slytherin
                 GryffReverse.SetActive(true);
                 SlythReverse.SetActive(false);            
         }
