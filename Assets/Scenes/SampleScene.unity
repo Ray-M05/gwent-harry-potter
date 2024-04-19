@@ -385,6 +385,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &36007210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,6 +537,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &66350943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -964,6 +966,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &99125155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1115,6 +1118,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &110116251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1472,6 +1476,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &172046775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1695,6 +1700,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &192721173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1880,6 +1886,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &232027122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2072,6 +2079,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &261858324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2314,6 +2322,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!1 &287517154
 GameObject:
   m_ObjectHideFlags: 0
@@ -2374,6 +2383,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &287517157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3642,6 +3652,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &432307294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3889,6 +3900,7 @@ MonoBehaviour:
   description_: {fileID: 0}
   GameManager: {fileID: 0}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!1 &463186032
 GameObject:
   m_ObjectHideFlags: 0
@@ -4524,6 +4536,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &577049500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5274,6 +5287,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &708647362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5425,6 +5439,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &708849564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5916,6 +5931,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &778027094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6067,6 +6083,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &792043559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6559,8 +6576,11 @@ RectTransform:
   - {fileID: 364792754}
   - {fileID: 655345992}
   - {fileID: 1629208016}
+  - {fileID: 1508584826}
   - {fileID: 384988343}
   - {fileID: 1405499650}
+  - {fileID: 1524655973}
+  - {fileID: 1884562105}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6772,6 +6792,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &875798505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7014,6 +7035,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!1 &885443063
 GameObject:
   m_ObjectHideFlags: 0
@@ -7381,6 +7403,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!1 &945778169
 GameObject:
   m_ObjectHideFlags: 0
@@ -7818,6 +7841,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!1 &981544689
 GameObject:
   m_ObjectHideFlags: 0
@@ -8217,6 +8241,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &1025646343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8508,6 +8533,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &1066712149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8659,6 +8685,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &1085567911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8882,6 +8909,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &1102019877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9033,6 +9061,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &1126305035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9184,6 +9213,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &1130796163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9426,6 +9456,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!1 &1162722438
 GameObject:
   m_ObjectHideFlags: 0
@@ -9620,6 +9651,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &1219356563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9962,7 +9994,7 @@ MonoBehaviour:
   - {fileID: 232027123}
   - {fileID: 708647363}
   Hand: []
-  P0ints:
+  Points:
   - {fileID: 1988722080}
   - {fileID: 1162722440}
   - {fileID: 1753671575}
@@ -10557,6 +10589,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &1342363996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10815,6 +10848,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &1386828749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11038,6 +11072,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &1393638043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11321,6 +11356,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!1 &1426193226
 GameObject:
   m_ObjectHideFlags: 0
@@ -11779,7 +11815,7 @@ MonoBehaviour:
   - {fileID: 880661808}
   - {fileID: 1483796164}
   Hand: []
-  P0ints:
+  Points:
   - {fileID: 1426193228}
   - {fileID: 720092451}
   - {fileID: 600899448}
@@ -12171,6 +12207,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!1 &1488605697
 GameObject:
   m_ObjectHideFlags: 0
@@ -12231,6 +12268,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &1488605700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12456,6 +12494,140 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493133040}
   m_CullTransparentMesh: 1
+--- !u!1 &1508584825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1508584826}
+  - component: {fileID: 1508584828}
+  - component: {fileID: 1508584827}
+  m_Layer: 5
+  m_Name: habilidad
+  m_TagString: Hability
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1508584826
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508584825}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 853305213}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 15.045, y: -395.192}
+  m_SizeDelta: {x: 715.577, y: 118.124}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1508584827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508584825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 32
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1508584828
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508584825}
+  m_CullTransparentMesh: 1
 --- !u!1 &1524655972
 GameObject:
   m_ObjectHideFlags: 0
@@ -12482,15 +12654,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524655972}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.5282246, y: 0.30378532, z: 0.28097054}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.8667084, y: 1.0735558, z: 0.99293005}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 853305213}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.04382828, y: -2.4897833}
+  m_AnchoredPosition: {x: 0.15488604, y: -8.798718}
   m_SizeDelta: {x: 1028.4, y: 1009.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1524655974
@@ -12754,7 +12926,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 874f85c230dfd1a4fb52125674339718, type: 3}
+  m_Texture: {fileID: 2800000, guid: 48e39a1ba02f5a4449a2e6ef08d5ebc0, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -13689,6 +13861,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!1 &1756744544
 GameObject:
   m_ObjectHideFlags: 0
@@ -13749,6 +13922,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &1756744547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14269,6 +14443,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!1 &1836491362
 GameObject:
   m_ObjectHideFlags: 0
@@ -14455,6 +14630,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!1 &1849757827
 GameObject:
   m_ObjectHideFlags: 0
@@ -14745,15 +14921,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884562104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.5282246, y: 0.30378532, z: 0.28097054}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.8667084, y: 1.0735558, z: 0.99293005}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 853305213}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.067086056, y: -20.985645}
+  m_AnchoredPosition: {x: 0.23707739, y: -74.16179}
   m_SizeDelta: {x: 1028.4, y: 1009.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1884562106
@@ -15468,6 +15644,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &2060271581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15619,6 +15796,7 @@ MonoBehaviour:
   description_: {fileID: 310533925}
   GameManager: {fileID: 1432765893}
   hogwartsdeck: {fileID: 0}
+  hability: {fileID: 0}
 --- !u!114 &2113167393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15854,5 +16032,3 @@ SceneRoots:
   - {fileID: 1465075454}
   - {fileID: 1031873580}
   - {fileID: 853305213}
-  - {fileID: 1524655973}
-  - {fileID: 1884562105}

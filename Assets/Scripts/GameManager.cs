@@ -280,8 +280,9 @@ public class GameManager : MonoBehaviour
                RoundsGryff.text = pointA.ToString();
                 //turn = "Slyth";
                 
+                //Gryffindor gana en caso de empate (habilidad del lider)
             }
-            if (int.Parse(PointsGryff.text) <= int.Parse(PointsSlyth.text))
+            if (int.Parse(PointsGryff.text) < int.Parse(PointsSlyth.text))
             {
             string text = RoundsSlyth.text;
                 int pointB = int.Parse(text);
@@ -343,11 +344,11 @@ public class GameManager : MonoBehaviour
 
     public void winner()
     {
-        if (RoundsGryff.text == "3")
+        if (RoundsGryff.text == "2")
         {
             WinnerG.SetActive(true);
         }
-        if (RoundsSlyth.text == "3")
+        if (RoundsSlyth.text == "2")
         {
             WinnerS.SetActive(true);
         }

@@ -20,6 +20,7 @@ public class cardaction : MonoBehaviour
     public GameObject description_;
     public GameManager GameManager;
     public hogwartsdeck hogwartsdeck;
+    public TextMeshProUGUI hability;
     
     private void Start()
     {
@@ -28,6 +29,7 @@ public class cardaction : MonoBehaviour
         mazo1 = GameObject.FindGameObjectWithTag("Slytherin").GetComponent<hogwartsdeck>(); //inicializa el mazo de slytherin
         cardvisual = GameObject.FindGameObjectWithTag("cardvisual").GetComponent<RawImage>();  //
         cardescription = GameObject.FindGameObjectWithTag("cardescription").GetComponent<TextMeshProUGUI>();
+        hability = GameObject.FindGameObjectWithTag("Hability").GetComponent<TextMeshProUGUI>();
 
         cardvisual.transform.localScale = new Vector2(0, 0);
         description_.transform.localScale = new Vector2(0, 0);
@@ -57,6 +59,7 @@ public class cardaction : MonoBehaviour
                 {
                     cardescription.text += mazo.Hand[carta_mano].GetComponent<Card>().campo[i].ToString();
                     cardescription.text += "\n";
+                    hability.text = mazo.Hand[carta_mano].GetComponent<Card>().description_skills;
                 }
             }
             else if (playerTurn == "Slyth")
@@ -66,6 +69,7 @@ public class cardaction : MonoBehaviour
                 {
                     cardescription.text += mazo1.Hand[carta_mano].GetComponent<Card>().campo[i].ToString();
                     cardescription.text += "\n";
+                    hability.text = mazo1.Hand[carta_mano].GetComponent<Card>().description_skills;
                 }
             }
         }
@@ -78,16 +82,16 @@ public class cardaction : MonoBehaviour
         {
             for (int j = 0; j < mazo.Pos.Count; j++)
             {
-                mazo.P0ints[j].text = mazo.Hand[j].GetComponent<Card>().points.ToString();
-                mazo1.P0ints[j].text = null;
+                mazo.Points[j].text = mazo.Hand[j].GetComponent<Card>().points.ToString();
+                mazo1.Points[j].text = null;
             }
         }
         else
         {
             for (int j = 0; j < mazo1.Pos.Count; j++)
             {
-                mazo1.P0ints[j].text = mazo1.Hand[j].GetComponent<Card>().points.ToString();
-                mazo.P0ints[j].text = null;
+                mazo1.Points[j].text = mazo1.Hand[j].GetComponent<Card>().points.ToString();
+                mazo.Points[j].text = null;
             }
         }
     }

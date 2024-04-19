@@ -9,7 +9,7 @@ public class hogwartsdeck : MonoBehaviour
     public List<GameObject> Deck = new List<GameObject>();
     public List<RawImage> Pos = new List<RawImage>();
     public List<GameObject> Hand = new List<GameObject>();
-    public List <TextMeshProUGUI> P0ints = new List<TextMeshProUGUI>();
+    public List <TextMeshProUGUI> Points = new List<TextMeshProUGUI>();
     public List<RawImage> PosCuerpoacuerpo = new List<RawImage>();
     public List<RawImage> PosDistancia = new List<RawImage>();
     public List<RawImage> PosAsedio = new List<RawImage>();
@@ -126,7 +126,7 @@ public class hogwartsdeck : MonoBehaviour
             if (Pos[i].texture == null)
             {
                 Pos[i].transform.localScale = new Vector2(0, 0);
-                P0ints[i].text = null; //no recorre los puntos si no hay  una carta en la mano
+                Points[i].text = null; //no recorre los puntos si no hay  una carta en la mano
             }
             else
             {
