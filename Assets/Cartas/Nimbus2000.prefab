@@ -97,11 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7bbd0a24584e6458a30ec903fe3f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 4
+  points: 2
   house: 0
   unidad: 3
   campo: 04000000
   name: Nimbus 2000
-  hability: 8
+  hability: 9
   description_skills: bonifican la fila seleccionada aumentando en 2 el poder de
     cada carta en el campo propio

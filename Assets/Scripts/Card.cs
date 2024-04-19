@@ -38,7 +38,6 @@ public enum Place{
         Clima,
         Aumento,
         Despeje,
-        Señuelo,
         Cementerio,
     }
 
@@ -52,6 +51,7 @@ public enum Superpower
     multicard,
     clean_j_down,
     promed,
+    señuelo,
     own,
     none,
 }

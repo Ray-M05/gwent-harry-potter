@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7bbd0a24584e6458a30ec903fe3f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 4
+  points: 5
   house: 0
   unidad: 1
   campo: 02000000

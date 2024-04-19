@@ -97,10 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7bbd0a24584e6458a30ec903fe3f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 3
+  points: 4
   house: 0
   unidad: 1
   campo: 0100000000000000
   name: Hermione
-  hability: 9
+  hability: 10
   description_skills: 

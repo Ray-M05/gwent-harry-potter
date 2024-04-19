@@ -97,11 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7bbd0a24584e6458a30ec903fe3f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: -2
+  points: -3
   house: 0
   unidad: 2
   campo: 03000000
   name: Dementor
-  hability: 8
+  hability: 9
   description_skills: afectan la fila seleccionada disminuyendo en 3 el poder de
     cada carta en ambos campos

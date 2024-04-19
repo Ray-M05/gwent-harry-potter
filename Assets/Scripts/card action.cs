@@ -117,6 +117,8 @@ public class cardaction : MonoBehaviour
                                         imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
                                         GameManager.Points_Gryffindor_C.Add(mazo.Hand[carta_mano].GetComponent<Card>());
+
+                                        searching_effect(mazo.Hand[carta_mano].GetComponent<Card>(), mazo.Hand[carta_mano].GetComponent<Card>().hability.ToString(), mazo, mazo1);
                                         mazo.Cementerio.Add(mazo.Hand[carta_mano]);
                                         mazo.Hand.RemoveAt(carta_mano);
                                         break;
@@ -286,6 +288,8 @@ public class cardaction : MonoBehaviour
                                         imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
                                         GameManager.Points_Slytherin_C.Add(mazo1.Hand[carta_mano].GetComponent<Card>());
+
+                                        searching_effect(mazo1.Hand[carta_mano].GetComponent<Card>(), mazo1.Hand[carta_mano].GetComponent<Card>().hability.ToString(), mazo1, mazo);
                                         mazo1.Cementerio.Add(mazo1.Hand[carta_mano]);
                                         mazo1.Hand.RemoveAt(carta_mano);
                                         break;
@@ -452,5 +456,30 @@ public class cardaction : MonoBehaviour
         
         return false;
     }
+
+    public void searching_effect (Card carta, string efecto, hogwartsdeck mazo_propio, hogwartsdeck mazo_adversario)
+    {
+        if ((carta.hability != Superpower.own) && (carta.hability != Superpower.none))
+        {
+          effect(efecto, mazo_propio,mazo_adversario);
+        }
+    }
+
+    public void effect(string efecto , hogwartsdeck mazo_propio, hogwartsdeck mazo_adversario)
+    {
+     switch (efecto)
+        {
+            case "rob_":
+                mazo_propio.rob(1);
+                break;
+
+           case "señuelo":
+                
+                break;
+
+        }
+    }
+
+
 
 }

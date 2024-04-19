@@ -97,10 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7bbd0a24584e6458a30ec903fe3f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 2
+  points: 0
   house: 0
   unidad: 4
   campo: 05000000
   name: Jugo de Mandragora
-  hability: 8
+  hability: 9
   description_skills: elimina todas las unidades de clima del campo
