@@ -31,9 +31,7 @@ public class GameManager : MonoBehaviour
     public Card Points_Gryffindor_Aumento_C = null;
     public Card Points_Gryffindor_Aumento_D = null;
     public Card Points_Gryffindor_Aumento_A = null;
-    public Card Points_Gryffindor_Clima_C = null;
-    public Card Points_Gryffindor_Clima_D = null;
-    public Card Points_Gryffindor_Clima_A = null;
+
 
     public List<Card> Points_Slytherin_C = new List<Card>();
     public List<Card> Points_Slytherin_D = new List<Card>();
@@ -41,9 +39,10 @@ public class GameManager : MonoBehaviour
     public Card Points_Slytherin_Aumento_C = null;
     public Card Points_Slytherin_Aumento_D = null;
     public Card Points_Slytherin_Aumento_A = null;
-    public Card Points_Slytherin_Clima_C = null;
-    public Card Points_Slytherin_Clima_D = null;
-    public Card Points_Slytherin_Clima_A = null;
+
+    public Card Points_Clima_C = null;
+    public Card Points_Clima_D = null;
+    public Card Points_Clima_A = null;
 
     private void Start()
     {
@@ -121,45 +120,6 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-        if (Points_Gryffindor_Clima_C != null)
-        {
-            for (int i = 0; i < Points_Gryffindor_C.Count; i++)
-            {
-                if (Points_Gryffindor_C[i] != null)
-                {
-                    if (Points_Gryffindor_C[i].GetComponent<Card>().unidad != Kindofcard.Oro)
-                    {
-                        puntosA -= 3;
-                    }
-                }
-            }
-        }
-        if (Points_Gryffindor_Clima_D != null)
-        {
-            for (int i = 0; i < Points_Gryffindor_D.Count; i++)
-            {
-                if (Points_Gryffindor_D[i] != null)
-                {
-                    if (Points_Gryffindor_D[i].GetComponent<Card>().unidad != Kindofcard.Oro)
-                    {
-                        puntosA -= 3;
-                    }
-                }
-            }
-        }
-        if (Points_Gryffindor_Clima_A != null)
-        {
-            for (int i = 0; i < Points_Gryffindor_A.Count; i++)
-            {
-                if (Points_Gryffindor_A[i] != null)
-                {
-                    if (Points_Gryffindor_A[i].GetComponent<Card>().unidad != Kindofcard.Oro)
-                    {
-                        puntosA -= 3;
-                    }
-                }
-            }
-        }
 
         PointsGryff.text = puntosA.ToString();
 
@@ -225,46 +185,58 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-        if (Points_Slytherin_Clima_C != null)
+        if (Points_Clima_C != null)
         {
             for (int i = 0; i < Points_Slytherin_C.Count; i++)
             {
-                if (Points_Slytherin_C[i] != null)
-                {
                     if (Points_Slytherin_C[i].GetComponent<Card>().unidad != Kindofcard.Oro)
                     {
                         puntosB -= 3;
                     }
-                }
+            }
+            for (int i = 0; i < Points_Gryffindor_C.Count; i++)
+            {
+                    if (Points_Gryffindor_C[i].GetComponent<Card>().unidad != Kindofcard.Oro)
+                    {
+                        puntosA -= 5; //los climas afectan a gryffindor mas por la habilidad de lider de slytherin
+                    }
             }
         }
-        if (Points_Slytherin_Clima_D != null)
+        if (Points_Clima_D != null)
         {
             for (int i = 0; i < Points_Slytherin_D.Count; i++)
             {
-                if (Points_Slytherin_D[i] != null)
+               if (Points_Slytherin_D[i].GetComponent<Card>().unidad != Kindofcard.Oro)
                 {
-                    if (Points_Slytherin_D[i].GetComponent<Card>().unidad != Kindofcard.Oro)
-                    {
                         puntosB -= 3;
-                    }
                 }
             }
+            for (int i = 0; i < Points_Gryffindor_D.Count; i++)
+            {
+                    if (Points_Gryffindor_D[i].GetComponent<Card>().unidad != Kindofcard.Oro)
+                    {
+                        puntosA -= 5;
+                    }
+            }
         }
-        if (Points_Slytherin_Clima_A != null)
+        if (Points_Clima_A != null)
         {
             for (int i = 0; i < Points_Slytherin_A.Count; i++)
             {
-                if (Points_Slytherin_A[i] != null)
-                {
                     if (Points_Slytherin_A[i].GetComponent<Card>().unidad != Kindofcard.Oro)
                     {
                         puntosB -= 3;
                     }
-                }
+            }
+            for (int i = 0; i < Points_Gryffindor_A.Count; i++)
+            {
+                    if (Points_Gryffindor_A[i].GetComponent<Card>().unidad != Kindofcard.Oro)
+                    {
+                        puntosA -= 5;
+                    }
             }
         }
-
+        PointsGryff.text = puntosA.ToString();
         PointsSlyth.text = puntosB.ToString();
     } 
 
@@ -298,9 +270,7 @@ public class GameManager : MonoBehaviour
             Points_Gryffindor_Aumento_A = null;
             Points_Gryffindor_Aumento_D = null;
             Points_Gryffindor_Aumento_C = null;
-            Points_Gryffindor_Clima_A = null;
-            Points_Gryffindor_Clima_D = null;
-            Points_Gryffindor_Clima_C = null;
+
 
             Points_Slytherin_C.Clear();
             Points_Slytherin_D.Clear();
@@ -308,9 +278,9 @@ public class GameManager : MonoBehaviour
             Points_Slytherin_Aumento_A = null;
             Points_Slytherin_Aumento_D = null;
             Points_Slytherin_Aumento_C = null;
-            Points_Slytherin_Clima_A = null;
-            Points_Slytherin_Clima_D = null;
-            Points_Slytherin_Clima_C = null;
+            Points_Clima_A = null;
+            Points_Clima_D = null;
+            Points_Clima_C = null;
             end_round();
             Gryffindor = false;
             Slytherin = false;

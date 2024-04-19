@@ -78,17 +78,17 @@ public class cardaction : MonoBehaviour
 
     public void muestrapuntos()
     {
-        if (playerTurn == "Slyth")
+        if (GameManager.turn == "Gryff")
         {
-            for (int j = 0; j < mazo.Pos.Count; j++)
+            for (int j = 0; j < mazo.Points.Count; j++)
             {
                 mazo.Points[j].text = mazo.Hand[j].GetComponent<Card>().points.ToString();
                 mazo1.Points[j].text = null;
             }
         }
-        else
+        else if (GameManager.turn == "Slyth")
         {
-            for (int j = 0; j < mazo1.Pos.Count; j++)
+            for (int j = 0; j < mazo1.Points.Count; j++)
             {
                 mazo1.Points[j].text = mazo1.Hand[j].GetComponent<Card>().points.ToString();
                 mazo.Points[j].text = null;
@@ -114,11 +114,11 @@ public class cardaction : MonoBehaviour
                                     if (mazo.PosCuerpoacuerpo[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
                                     {
                                         mazo.PosCuerpoacuerpo[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
-                                        imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
                                         GameManager.Points_Gryffindor_C.Add(mazo.Hand[carta_mano].GetComponent<Card>());
 
-                                        searching_effect(mazo.Hand[carta_mano].GetComponent<Card>(), mazo.Hand[carta_mano].GetComponent<Card>().hability.ToString(), mazo, mazo1);
+                                        searching_effect(mazo.Hand[carta_mano].GetComponent<Card>(), mazo.Hand[carta_mano].GetComponent<Card>().hability.ToString(), mazo, mazo1, mazo.PosCuerpoacuerpo);
+                                        imagecard.texture = null; //quita la carta de hand
                                         mazo.Cementerio.Add(mazo.Hand[carta_mano]);
                                         mazo.Hand.RemoveAt(carta_mano);
                                         break;
@@ -136,9 +136,9 @@ public class cardaction : MonoBehaviour
                                     if (mazo.PosDistancia[i].texture == null) //verifica que las pos distancia no tengan una carta
                                     {
                                         mazo.PosDistancia[i].texture = imagecard.texture; //invocar la carta en distancia
-                                        imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
                                         GameManager.Points_Gryffindor_D.Add(mazo.Hand[carta_mano].GetComponent<Card>());
+                                        imagecard.texture = null; //quita la carta de hand
                                         mazo.Cementerio.Add(mazo.Hand[carta_mano]);
                                         mazo.Hand.RemoveAt(carta_mano);
                                         break;
@@ -156,9 +156,11 @@ public class cardaction : MonoBehaviour
                                     if (mazo.PosAsedio[i].texture == null) //verifica que las pos asedio no tengan una carta
                                     {
                                         mazo.PosAsedio[i].texture = imagecard.texture; //invocar la carta en asedio
-                                        imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
                                         GameManager.Points_Gryffindor_A.Add(mazo.Hand[carta_mano].GetComponent<Card>());
+
+                                        searching_effect(mazo.Hand[carta_mano].GetComponent<Card>(), mazo.Hand[carta_mano].GetComponent<Card>().hability.ToString(), mazo, mazo1, mazo.PosAsedio);
+                                        imagecard.texture = null; //quita la carta de hand
                                         mazo.Cementerio.Add(mazo.Hand[carta_mano]);
                                         mazo.Hand.RemoveAt(carta_mano);
                                         break;
@@ -216,7 +218,7 @@ public class cardaction : MonoBehaviour
                                     mazo.PosClima[0].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
-                                    GameManager.Points_Gryffindor_Clima_C = mazo.Hand[carta_mano].GetComponent<Card>();
+                                    GameManager.Points_Clima_C = mazo.Hand[carta_mano].GetComponent<Card>();
                                     mazo.Cementerio.Add(mazo.Hand[carta_mano]);
                                     mazo.Hand.RemoveAt(carta_mano);
                                 }
@@ -228,7 +230,7 @@ public class cardaction : MonoBehaviour
                                     mazo.PosClima[1].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
-                                    GameManager.Points_Gryffindor_Clima_D = mazo.Hand[carta_mano].GetComponent<Card>();
+                                    GameManager.Points_Clima_D = mazo.Hand[carta_mano].GetComponent<Card>();
                                     mazo.Cementerio.Add(mazo.Hand[carta_mano]);
                                     mazo.Hand.RemoveAt(carta_mano);
                                 }
@@ -240,7 +242,7 @@ public class cardaction : MonoBehaviour
                                     mazo.PosClima[2].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
-                                    GameManager.Points_Gryffindor_Clima_A = mazo.Hand[carta_mano].GetComponent<Card>();
+                                    GameManager.Points_Clima_A = mazo.Hand[carta_mano].GetComponent<Card>();
                                     mazo.Cementerio.Add(mazo.Hand[carta_mano]);
                                     mazo.Hand.RemoveAt(carta_mano);
                                 }
@@ -255,9 +257,9 @@ public class cardaction : MonoBehaviour
                                 {
                                         mazo.PosClima[i].texture = null;
                                         GameManager.ConfirmaTurno = true;
-                                        GameManager.Points_Gryffindor_Clima_A = null;
-                                        GameManager.Points_Gryffindor_Clima_D = null;
-                                        GameManager.Points_Gryffindor_Clima_C = null;
+                                        GameManager.Points_Clima_A = null;
+                                        GameManager.Points_Clima_D = null;
+                                        GameManager.Points_Clima_C = null;
                                 }
                                 mazo.PosDespeje.texture = imagecard.texture;
                                 imagecard.texture = null;
@@ -285,11 +287,11 @@ public class cardaction : MonoBehaviour
                                     if (mazo1.PosCuerpoacuerpo[i].texture == null) //verifica que las pos cuerpoacuerpo no tengan una carta
                                     {
                                         mazo1.PosCuerpoacuerpo[i].texture = imagecard.texture; //pasa la imagen de la carta en pos cuerpoacuerpo
-                                        imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
                                         GameManager.Points_Slytherin_C.Add(mazo1.Hand[carta_mano].GetComponent<Card>());
 
-                                        searching_effect(mazo1.Hand[carta_mano].GetComponent<Card>(), mazo1.Hand[carta_mano].GetComponent<Card>().hability.ToString(), mazo1, mazo);
+                                        searching_effect(mazo1.Hand[carta_mano].GetComponent<Card>(), mazo1.Hand[carta_mano].GetComponent<Card>().hability.ToString(), mazo1, mazo, mazo1.PosCuerpoacuerpo);
+                                        imagecard.texture = null; //quita la carta de hand
                                         mazo1.Cementerio.Add(mazo1.Hand[carta_mano]);
                                         mazo1.Hand.RemoveAt(carta_mano);
                                         break;
@@ -307,9 +309,9 @@ public class cardaction : MonoBehaviour
                                     if (mazo1.PosDistancia[i].texture == null) //verifica que las pos distancia no tengan una carta
                                     {
                                         mazo1.PosDistancia[i].texture = imagecard.texture; //invocar la carta en distancia
-                                        imagecard.texture = null; //quita la carta de hand
                                         GameManager.ConfirmaTurno = true;
                                         GameManager.Points_Slytherin_D.Add(mazo1.Hand[carta_mano].GetComponent<Card>());
+                                        imagecard.texture = null; //quita la carta de hand
                                         mazo1.Cementerio.Add(mazo1.Hand[carta_mano]);
                                         mazo1.Hand.RemoveAt(carta_mano);
                                         break;
@@ -326,10 +328,12 @@ public class cardaction : MonoBehaviour
                                 {
                                     if (mazo1.PosAsedio[i].texture == null) //verifica que las pos asedio no tengan una carta
                                     {
-                                        mazo1.PosAsedio[i].texture = imagecard.texture; //invocar la carta en asedio
-                                        imagecard.texture = null; //quita la carta de hand
+                                        mazo1.PosAsedio[i].texture = imagecard.texture; //invocar la carta en asedio                                      
                                         GameManager.ConfirmaTurno = true;
                                         GameManager.Points_Slytherin_A.Add(mazo1.Hand[carta_mano].GetComponent<Card>());
+
+                                        searching_effect(mazo1.Hand[carta_mano].GetComponent<Card>(), mazo1.Hand[carta_mano].GetComponent<Card>().hability.ToString(), mazo1, mazo, mazo1.PosAsedio);
+                                        imagecard.texture = null; //quita la carta de hand
                                         mazo1.Cementerio.Add(mazo1.Hand[carta_mano]);
                                         mazo1.Hand.RemoveAt(carta_mano);
                                         break;
@@ -387,7 +391,7 @@ public class cardaction : MonoBehaviour
                                     mazo1.PosClima[0].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
-                                    GameManager.Points_Slytherin_Clima_C = mazo1.Hand[carta_mano].GetComponent<Card>();
+                                    GameManager.Points_Clima_C = mazo1.Hand[carta_mano].GetComponent<Card>();
                                     mazo1.Cementerio.Add(mazo1.Hand[carta_mano]);
                                     mazo1.Hand.RemoveAt(carta_mano);
                                 }
@@ -399,7 +403,7 @@ public class cardaction : MonoBehaviour
                                     mazo1.PosClima[1].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
-                                    GameManager.Points_Slytherin_Clima_D = mazo1.Hand[carta_mano].GetComponent<Card>();
+                                    GameManager.Points_Clima_D = mazo1.Hand[carta_mano].GetComponent<Card>();
                                     mazo1.Cementerio.Add(mazo1.Hand[carta_mano]);
                                     mazo1.Hand.RemoveAt(carta_mano);
                                 }
@@ -411,7 +415,7 @@ public class cardaction : MonoBehaviour
                                     mazo1.PosClima[2].texture = imagecard.texture;
                                     imagecard.texture = null; //quita la carta de hand
                                     GameManager.ConfirmaTurno = true;
-                                    GameManager.Points_Slytherin_Clima_A = mazo1.Hand[carta_mano].GetComponent<Card>();
+                                    GameManager.Points_Clima_A = mazo1.Hand[carta_mano].GetComponent<Card>();
                                     mazo1.Cementerio.Add(mazo1.Hand[carta_mano]);
                                     mazo1.Hand.RemoveAt(carta_mano);
                                 }
@@ -426,9 +430,9 @@ public class cardaction : MonoBehaviour
                                 {
                                         mazo1.PosClima[i].texture = null;
                                         GameManager.ConfirmaTurno = true;
-                                        GameManager.Points_Slytherin_Clima_A = null;
-                                        GameManager.Points_Slytherin_Clima_D = null;
-                                        GameManager.Points_Slytherin_Clima_C = null;  
+                                        GameManager.Points_Clima_A = null;
+                                        GameManager.Points_Clima_D = null;
+                                        GameManager.Points_Clima_C = null;  
                                 }
                                 mazo1.PosDespeje.texture = imagecard.texture;
                                 imagecard.texture = null;
@@ -457,15 +461,15 @@ public class cardaction : MonoBehaviour
         return false;
     }
 
-    public void searching_effect (Card carta, string efecto, hogwartsdeck mazo_propio, hogwartsdeck mazo_adversario)
+    public void searching_effect(Card carta, string efecto, hogwartsdeck mazo_propio, hogwartsdeck mazo_adversario, List<RawImage> fila)
     {
         if ((carta.hability != Superpower.own) && (carta.hability != Superpower.none))
         {
-          effect(efecto, mazo_propio,mazo_adversario);
+          effect(carta, efecto, mazo_propio,mazo_adversario, fila);
         }
     }
 
-    public void effect(string efecto , hogwartsdeck mazo_propio, hogwartsdeck mazo_adversario)
+    public void effect(Card card, string efecto , hogwartsdeck mazo_propio, hogwartsdeck mazo_adversario, List<RawImage> fila)
     {
      switch (efecto)
         {
@@ -473,10 +477,84 @@ public class cardaction : MonoBehaviour
                 mazo_propio.rob(1);
                 break;
 
-           case "señuelo":
-                
+           case "add_aumento":
+                if (fila == mazo_propio.PosAsedio)
+                {
+                    if (mazo_propio == mazo)
+                    {
+                        if (GameManager.Points_Gryffindor_Aumento_A == null)
+                        {
+                            mazo_propio.PosAumento[2].texture = imagecard.texture;
+                            GameManager.Points_Gryffindor_Aumento_A = card;
+                        }
+                    }
+                    else
+                    {
+                        if (GameManager.Points_Slytherin_Aumento_A == null)
+                        {
+                            mazo_propio.PosAumento[2].texture = imagecard.texture;
+                            GameManager.Points_Slytherin_Aumento_A = card;
+                        }
+                    }
+                }
+                if (fila == mazo_propio.PosCuerpoacuerpo)
+                {
+                    if (mazo_propio == mazo)
+                    {
+                        if (GameManager.Points_Gryffindor_Aumento_C == null)
+                        {
+                            mazo_propio.PosAumento[2].texture = imagecard.texture;
+                            GameManager.Points_Gryffindor_Aumento_C = card;
+                        }
+                    }
+                    else
+                    {
+                        if (GameManager.Points_Slytherin_Aumento_C == null)
+                        {
+                            mazo_propio.PosAumento[2].texture = imagecard.texture;
+                            GameManager.Points_Slytherin_Aumento_C = card;
+                        }
+                    }
+                }
+                if (fila == mazo_propio.PosDistancia)
+                {
+                    if (mazo_propio == mazo)
+                    {
+                        if (GameManager.Points_Gryffindor_Aumento_D == null)
+                        {
+                            mazo_propio.PosAumento[2].texture = imagecard.texture;
+                            GameManager.Points_Gryffindor_Aumento_D = card;
+                        }
+                    }
+                    else
+                    {
+                        if (GameManager.Points_Slytherin_Aumento_D == null)
+                        {
+                            mazo_propio.PosAumento[2].texture = imagecard.texture;
+                            GameManager.Points_Slytherin_Aumento_D = card;
+                        }
+                    }
+                }
+
                 break;
 
+            case "add_clima":
+                if (fila == mazo_propio.PosAsedio)
+                {
+                    mazo_propio.PosClima[2].texture = imagecard.texture;
+                    GameManager.Points_Clima_A = card;
+                }
+                if (fila == mazo_propio.PosDistancia)
+                {
+                    mazo_propio.PosClima[1].texture = imagecard.texture;
+                    GameManager.Points_Clima_D = card;
+                }
+                if (fila == mazo_propio.PosCuerpoacuerpo)
+                {
+                    mazo_propio.PosClima[0].texture = imagecard.texture;
+                    GameManager.Points_Clima_C = card;
+                }
+                break;
         }
     }
 
