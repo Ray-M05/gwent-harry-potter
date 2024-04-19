@@ -323,4 +323,48 @@ public class GameManager : MonoBehaviour
             WinnerS.SetActive(true);
         }
     }
+
+    public int mayor_carta (List<Card> lista)
+    {
+        int mayor = lista[0].points;
+        int posicion = 0;
+
+        if (lista != null)
+        {
+            for (int i = 1; i < lista.Count; i++)
+            {
+                if (lista[i].points > mayor)
+                {
+                    mayor = lista[i].points;
+                    posicion = i;
+                }
+            }
+            
+            
+        }
+        return posicion;
+    }
+
+    public int menor_carta(List<Card> lista)
+    {
+        int menor = lista[0].points;
+        int posicion = 0;
+
+        if (lista != null)
+        {
+            for (int i = 1; i < lista.Count; i++)
+            {
+                if (lista[i].points < menor)
+                {
+                    menor = lista[i].points;
+                    posicion = i;
+                }
+            }
+            
+            
+        }
+        return posicion;
+    }
+
+    
 }

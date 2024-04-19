@@ -34,7 +34,7 @@ public class hogwartsdeck : MonoBehaviour
         for (int i = 0; (Hand.Count < 10)&& count>0; i++,count--) //va a recorrer el numero de cartas que se robaran 
         {
             Hand.Add(Deck[i]); //agrega las cartas de la mano al deck
-            Deck.RemoveAt(0);
+            Deck.RemoveAt(i);
         }
         
     }

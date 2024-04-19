@@ -15,6 +15,7 @@ public class Card : MonoBehaviour
     public new string name;
     public Superpower hability;
     public string description_skills;
+    public RawImage image;
 }
  
  public enum Leaderfaction{
