@@ -5,6 +5,8 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEditor.PlayerSettings;
+using System;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class cardaction : MonoBehaviour
 {
@@ -21,7 +23,9 @@ public class cardaction : MonoBehaviour
     public GameManager GameManager;
     public hogwartsdeck hogwartsdeck;
     public TextMeshProUGUI hability;
-    public SpriteRenderer SpriteRenderer;
+    public Card Leader1;
+    public Card Leader2;
+
     
     private void Start()
     {
@@ -31,6 +35,9 @@ public class cardaction : MonoBehaviour
         cardvisual = GameObject.FindGameObjectWithTag("cardvisual").GetComponent<RawImage>();  //
         cardescription = GameObject.FindGameObjectWithTag("cardescription").GetComponent<TextMeshProUGUI>();
         hability = GameObject.FindGameObjectWithTag("Hability").GetComponent<TextMeshProUGUI>();
+        Leader1 = GameObject.FindGameObjectWithTag("Harry").GetComponent<Card>();
+        Leader2 = GameObject.FindGameObjectWithTag("Voldemort").GetComponent<Card>();
+
 
         cardvisual.transform.localScale = new Vector2(0, 0);
         description_.transform.localScale = new Vector2(0, 0);
@@ -54,6 +61,7 @@ public class cardaction : MonoBehaviour
 
             cardescription.text = "";
             description_.transform.localScale = new Vector2(1, 1);
+
             if (playerTurn == "Gryff")
             {
                 for (int i = 0; i < mazo.Hand[carta_mano].GetComponent<Card>().campo.Length; i++)
@@ -61,6 +69,7 @@ public class cardaction : MonoBehaviour
                     cardescription.text += mazo.Hand[carta_mano].GetComponent<Card>().campo[i].ToString();
                     cardescription.text += "\n";
                     hability.text = mazo.Hand[carta_mano].GetComponent<Card>().description_skills;
+                    //hability.text = Leader1.description_skills.ToString();
                 }
             }
             else if (playerTurn == "Slyth")
@@ -71,6 +80,7 @@ public class cardaction : MonoBehaviour
                     cardescription.text += mazo1.Hand[carta_mano].GetComponent<Card>().campo[i].ToString();
                     cardescription.text += "\n";
                     hability.text = mazo1.Hand[carta_mano].GetComponent<Card>().description_skills;
+                    //hability.text = Leader2.description_skills.ToString();
                 }
             }
         }
@@ -270,6 +280,31 @@ public class cardaction : MonoBehaviour
                                 mazo.Hand.RemoveAt(carta_mano);
                             }
                         }
+                        if (campocarta("Señuelo", mazo.Hand, carta_mano))
+                        {
+                            if (campo == 11)
+                            {
+                                int A = GameManager.mayor_carta(GameManager.Points_Gryffindor_C);
+                                int P = GameManager.Points_Gryffindor_C[A].points;
+                                GameManager.Points_Gryffindor_C.RemoveAt(A);
+                                for (int i = 0; i < mazo.PosCuerpoacuerpo.Count; i++)
+                                {
+                                    if (GameManager.Points_Gryffindor_C[A].GetComponent<SpriteRenderer>().sprite.texture == mazo.PosCuerpoacuerpo[i].texture)
+                                    {
+                                        mazo.PosCuerpoacuerpo[i].texture = imagecard.texture;
+                                    }
+                                }
+                                for (int j = 0; j < mazo.Cementerio.Count; j++)
+                                {
+                                    if (mazo.Cementerio[j].GetComponent<Card>().points == P)
+                                    {
+                                        mazo.Hand.Add(mazo.Cementerio[j]);
+                                    }
+                                }
+
+                            }
+
+                        }
                     }
                 }
             }
@@ -313,6 +348,8 @@ public class cardaction : MonoBehaviour
                                     {
                                         mazo1.PosDistancia[i].texture = imagecard.texture; //invocar la carta en distancia
                                         GameManager.ConfirmaTurno = true;
+
+                                        searching_effect(mazo1.Hand[carta_mano].GetComponent<Card>(), mazo1.Hand[carta_mano].GetComponent<Card>().hability.ToString(), mazo1, mazo, mazo1.PosDistancia);
                                         GameManager.Points_Slytherin_D.Add(mazo1.Hand[carta_mano].GetComponent<Card>());
                                         imagecard.texture = null; //quita la carta de hand
                                         mazo1.Cementerio.Add(mazo1.Hand[carta_mano]);
@@ -560,28 +597,33 @@ public class cardaction : MonoBehaviour
                 break;
 
             case "clean_j_down":
-
+                List<RawImage> mayores = ListWithMayorElement(mazo_adversario.PosCuerpoacuerpo, mazo_adversario.PosDistancia, mazo_adversario.PosAsedio);
+                for (int i = 0; i < mayores.Count; i++)
+                {
+                    mayores[i].texture = null;
+                    GameManager.Puntos_asociados(mayores).Clear();
+                }
                 break;
 
             case "clean_card_up":
                 if (mazo_propio == mazo1)
                 {
-                    int A = GameManager.mayor_carta(GameManager.Points_Gryffindor_A);
+                    /*int A = GameManager.mayor_carta(GameManager.Points_Gryffindor_A);
                     int C = GameManager.mayor_carta(GameManager.Points_Gryffindor_C);
-                    int D = GameManager.mayor_carta(GameManager.Points_Gryffindor_D);
+                    int D = GameManager.mayor_carta(GameManager.Points_Gryffindor_D);*/
 
-                    if (GameManager.Points_Gryffindor_A[A].points > GameManager.Points_Gryffindor_C[C].points && GameManager.Points_Gryffindor_A[A].points > GameManager.Points_Gryffindor_D[D].points)
-                    {
+                    //if(GameManager.Points_Gryffindor_A[A].points > GameManager.Points_Gryffindor_C[C].points && GameManager.Points_Gryffindor_A[A].points > GameManager.Points_Gryffindor_D[D].points)
+                    //{
                      
                         for (int i = 0; i < mazo_adversario.PosAsedio.Count; i++)
                         {
-                            if (GameManager.Points_Gryffindor_A[A] /*algo*/ == mazo_adversario.PosAsedio[i].texture)
+                            if (GameManager.Points_Gryffindor_A[0].GetComponent<SpriteRenderer>().sprite.texture == mazo_adversario.PosAsedio[i].texture)
                             {
                                 mazo_adversario.PosAsedio[i].texture = null;
-                                GameManager.Points_Gryffindor_A[A] = null;
+                                GameManager.Points_Gryffindor_A[0] = null;
                             }
                         }
-                    }
+                   // }
                 }
                 break;
 
@@ -599,9 +641,41 @@ public class cardaction : MonoBehaviour
         }
     }
 
-    public void Cleanning_j(List<RawImage> listaRaw, List<Card> listapoints)
+    public List<RawImage> ListWithMayorElement(List<RawImage> lista1, List<RawImage> lista2, List<RawImage> lista3)
     {
-        
+        int count1 = CountNonNullTextures(lista1);
+        int count2 = CountNonNullTextures(lista2);
+        int count3 = CountNonNullTextures(lista3);
+
+        int maxCount = Math.Max(count1, Math.Max(count2, count3));
+
+        if (maxCount == count1)
+        {
+            return lista1;
+        }
+        else if (maxCount == count2)
+        {
+            return lista2;
+        }
+        else if (maxCount == count3)
+        {
+            return lista3;
+        }
+
+        return null;
+    }
+
+    private int CountNonNullTextures(List<RawImage> list)
+    {
+        int count = 0;
+        foreach (var item in list)
+        {
+            if (item.texture != null)
+            {
+                count++;
+            }
+        }
+        return count;
     }
 
 }

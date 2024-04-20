@@ -366,5 +366,32 @@ public class GameManager : MonoBehaviour
         return posicion;
     }
 
-    
+    public List<Card> Puntos_asociados(List<RawImage> lista)
+    {
+        if (lista == mazo.PosCuerpoacuerpo)
+        {
+            return Points_Gryffindor_C;
+        }
+        if (lista == mazo.PosDistancia)
+        {
+            return Points_Gryffindor_D;
+        }
+        if (lista == mazo.PosAsedio)
+        {
+            return Points_Gryffindor_A;
+        }
+        if (lista == mazo1.PosCuerpoacuerpo)
+        {
+            return Points_Slytherin_C;
+        }
+        if (lista == mazo1.PosDistancia)
+        {
+            return Points_Slytherin_D;
+        }
+        if (lista == mazo1.PosAsedio)
+        {
+            return Points_Slytherin_A;
+        }
+        return null;
+    } 
 }

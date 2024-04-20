@@ -24,6 +24,7 @@ public class Buttonaction : MonoBehaviour
         Carta.invocar(1); //cartas cuerpo a cuerpo
         Carta.invocar(4); //aumento pos cuerpo a cuerpo
         Carta.invocar(7); //clima afecta cuerpo a cuerpo
+        Carta.invocar(11);
     }
 
     public void invocarDistancia()

@@ -9,6 +9,8 @@ TagManager:
   - cardescription
   - Slytherin
   - Hability
+  - Harry
+  - Voldemort
   layers:
   - Default
   - TransparentFX
