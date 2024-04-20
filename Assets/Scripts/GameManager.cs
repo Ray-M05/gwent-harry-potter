@@ -333,10 +333,14 @@ public class GameManager : MonoBehaviour
         {
             for (int i = 1; i < lista.Count; i++)
             {
-                if (lista[i].points > mayor)
+                if (lista[i].unidad != Kindofcard.Oro)
                 {
-                    mayor = lista[i].points;
-                    posicion = i;
+                    if (lista[i].points > mayor)
+                    {
+                        mayor = lista[i].points;
+                        posicion = i;
+                    }
+                    
                 }
             }
             

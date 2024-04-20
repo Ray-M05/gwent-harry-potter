@@ -28,7 +28,7 @@ public enum Kindofcard{
         Clima,
         Aumento,
         Despeje,
-        Señuelo,
+        Senuelo,
     }
 
 public enum Place{
@@ -39,6 +39,7 @@ public enum Place{
         Aumento,
         Despeje,
         Cementerio,
+        Senuelo,
     }
 
 public enum Superpower

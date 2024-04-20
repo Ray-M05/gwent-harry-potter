@@ -280,16 +280,16 @@ public class cardaction : MonoBehaviour
                                 mazo.Hand.RemoveAt(carta_mano);
                             }
                         }
-                        if (campocarta("Señuelo", mazo.Hand, carta_mano))
+                        if (campocarta("Senuelo", mazo.Hand, carta_mano))
                         {
                             if (campo == 11)
                             {
                                 int A = GameManager.mayor_carta(GameManager.Points_Gryffindor_C);
                                 int P = GameManager.Points_Gryffindor_C[A].points;
-                                GameManager.Points_Gryffindor_C.RemoveAt(A);
+                                
                                 for (int i = 0; i < mazo.PosCuerpoacuerpo.Count; i++)
                                 {
-                                    if (GameManager.Points_Gryffindor_C[A].GetComponent<SpriteRenderer>().sprite.texture == mazo.PosCuerpoacuerpo[i].texture)
+                                    if (GameManager.Points_Gryffindor_C[A].GetComponent<SpriteRenderer>().sprite.texture == mazo.PosCuerpoacuerpo[i].texture )
                                     {
                                         mazo.PosCuerpoacuerpo[i].texture = imagecard.texture;
                                     }
@@ -301,13 +301,55 @@ public class cardaction : MonoBehaviour
                                         mazo.Hand.Add(mazo.Cementerio[j]);
                                     }
                                 }
-
+                                GameManager.Points_Gryffindor_C.RemoveAt(A);
                             }
+                            if (campo == 12)
+                            {
+                                int A = GameManager.mayor_carta(GameManager.Points_Gryffindor_D);
+                                int P = GameManager.Points_Gryffindor_D[A].points;
 
+                                for (int i = 0; i < mazo.PosDistancia.Count; i++)
+                                {
+                                    if (GameManager.Points_Gryffindor_D[A].GetComponent<SpriteRenderer>().sprite.texture == mazo.PosDistancia[i].texture)
+                                    {
+                                        mazo.PosDistancia[i].texture = imagecard.texture;
+                                    }
+                                }
+                                for (int j = 0; j < mazo.Cementerio.Count; j++)
+                                {
+                                    if (mazo.Cementerio[j].GetComponent<Card>().points == P)
+                                    {
+                                        mazo.Hand.Add(mazo.Cementerio[j]);
+                                    }
+                                }
+                                GameManager.Points_Gryffindor_D.RemoveAt(A);
+                            }
+                            if (campo == 13)
+                                {
+                                 int A = GameManager.mayor_carta(GameManager.Points_Gryffindor_A);
+                                 int P = GameManager.Points_Gryffindor_A[A].points;
+
+                                 for (int i = 0; i < mazo.PosAsedio.Count; i++)
+                                    {
+                                    if (GameManager.Points_Gryffindor_A[A].GetComponent<SpriteRenderer>().sprite.texture == mazo.PosAsedio[i].texture)
+                                    {
+                                      mazo.PosAsedio[i].texture = imagecard.texture;
+                                    }
+                                 }
+                                 for (int j = 0; j < mazo.Cementerio.Count; j++)
+                                 {
+                                    if (mazo.Cementerio[j].GetComponent<Card>().points == P)
+                                    {
+                                      mazo.Hand.Add(mazo.Cementerio[j]);
+                                    }
+                                 }
+                                   GameManager.Points_Gryffindor_A.RemoveAt(A);
+                                }
+                            }
                         }
                     }
                 }
-            }
+            
 
 
             if (playerTurn == "Slyth" && GameManager.turn == playerTurn)
@@ -481,6 +523,72 @@ public class cardaction : MonoBehaviour
                             }
                         }
 
+                        if (campocarta("Senuelo", mazo1.Hand, carta_mano))
+                        {
+                            if (campo == 11)
+                            {
+                                int A = GameManager.mayor_carta(GameManager.Points_Slytherin_C);
+                                int P = GameManager.Points_Slytherin_C[A].points;
+
+                                for (int i = 0; i < mazo1.PosCuerpoacuerpo.Count; i++)
+                                {
+                                    if (GameManager.Points_Slytherin_C[A].GetComponent<SpriteRenderer>().sprite.texture == mazo1.PosCuerpoacuerpo[i].texture)
+                                    {
+                                        mazo1.PosCuerpoacuerpo[i].texture = imagecard.texture;
+                                    }
+                                }
+                                for (int j = 0; j < mazo1.Cementerio.Count; j++)
+                                {
+                                    if (mazo1.Cementerio[j].GetComponent<Card>().points == P)
+                                    {
+                                        mazo1.Hand.Add(mazo1.Cementerio[j]);
+                                    }
+                                }
+                                GameManager.Points_Slytherin_C.RemoveAt(A);
+                            }
+                            if (campo == 12)
+                            {
+                                int A = GameManager.mayor_carta(GameManager.Points_Slytherin_D);
+                                int P = GameManager.Points_Slytherin_D[A].points;
+
+                                for (int i = 0; i < mazo1.PosDistancia.Count; i++)
+                                {
+                                    if (GameManager.Points_Slytherin_D[A].GetComponent<SpriteRenderer>().sprite.texture == mazo1.PosDistancia[i].texture)
+                                    {
+                                        mazo1.PosDistancia[i].texture = imagecard.texture;
+                                    }
+                                }
+                                for (int j = 0; j < mazo1.Cementerio.Count; j++)
+                                {
+                                    if (mazo1.Cementerio[j].GetComponent<Card>().points == P)
+                                    {
+                                        mazo1.Hand.Add(mazo1.Cementerio[j]);
+                                    }
+                                }
+                                GameManager.Points_Slytherin_D.RemoveAt(A);
+                            }
+                            if (campo == 13)
+                            {
+                                int A = GameManager.mayor_carta(GameManager.Points_Slytherin_A);
+                                int P = GameManager.Points_Slytherin_A[A].points;
+
+                                for (int i = 0; i < mazo1.PosAsedio.Count; i++)
+                                {
+                                    if (GameManager.Points_Slytherin_A[A].GetComponent<SpriteRenderer>().sprite.texture == mazo1.PosAsedio[i].texture)
+                                    {
+                                        mazo1.PosAsedio[i].texture = imagecard.texture;
+                                    }
+                                }
+                                for (int j = 0; j < mazo1.Cementerio.Count; j++)
+                                {
+                                    if (mazo1.Cementerio[j].GetComponent<Card>().points == P)
+                                    {
+                                        mazo1.Hand.Add(mazo1.Cementerio[j]);
+                                    }
+                                }
+                                GameManager.Points_Slytherin_A.RemoveAt(A);
+                            }
+                        }
                     }
                 }
             }
@@ -608,13 +716,6 @@ public class cardaction : MonoBehaviour
             case "clean_card_up":
                 if (mazo_propio == mazo1)
                 {
-                    /*int A = GameManager.mayor_carta(GameManager.Points_Gryffindor_A);
-                    int C = GameManager.mayor_carta(GameManager.Points_Gryffindor_C);
-                    int D = GameManager.mayor_carta(GameManager.Points_Gryffindor_D);*/
-
-                    //if(GameManager.Points_Gryffindor_A[A].points > GameManager.Points_Gryffindor_C[C].points && GameManager.Points_Gryffindor_A[A].points > GameManager.Points_Gryffindor_D[D].points)
-                    //{
-                     
                         for (int i = 0; i < mazo_adversario.PosAsedio.Count; i++)
                         {
                             if (GameManager.Points_Gryffindor_A[0].GetComponent<SpriteRenderer>().sprite.texture == mazo_adversario.PosAsedio[i].texture)
@@ -623,21 +724,10 @@ public class cardaction : MonoBehaviour
                                 GameManager.Points_Gryffindor_A[0] = null;
                             }
                         }
-                   // }
                 }
                 break;
 
-            /*case "multicard":
-                int cant = 1;
-                for (int i = 0; i < mazo_propio.PosCuerpoacuerpo.Count; i++)
-                {
-                    if (imagecard.texture == mazo_propio.PosCuerpoacuerpo[i].texture || imagecard.texture == mazo_propio.PosDistancia[i].texture || imagecard.texture == mazo_propio.PosAsedio[i].texture)
-                    {
-                        ++cant;
-                    }
-                    card.points *= cant;
-                }
-                break;*/
+            
         }
     }
 

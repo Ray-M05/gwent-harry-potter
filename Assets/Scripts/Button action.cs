@@ -32,6 +32,7 @@ public class Buttonaction : MonoBehaviour
       Carta.invocar(2); //cartas
       Carta.invocar(5);  //aumento
       Carta.invocar(8); //clima
+      Carta.invocar(12);
     }
 
     public void invocarAsedio()
@@ -39,6 +40,7 @@ public class Buttonaction : MonoBehaviour
         Carta.invocar(3);
         Carta.invocar(6);
         Carta.invocar(9);
+        Carta.invocar(13);
     }
 
     public void invocarDespeje()
