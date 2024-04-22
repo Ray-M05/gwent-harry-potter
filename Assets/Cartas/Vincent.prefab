@@ -102,5 +102,5 @@ MonoBehaviour:
   unidad: 1
   campo: 00000000
   name: Vincent Crabbe
-  hability: 6
+  hability: 4
   description_skills: limpia la fila con mayor cantidad de unidades del rival

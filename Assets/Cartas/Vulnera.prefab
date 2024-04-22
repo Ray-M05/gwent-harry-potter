@@ -102,5 +102,5 @@ MonoBehaviour:
   unidad: 4
   campo: 05000000
   name: Vulnera Sanetur
-  hability: 9
+  hability: 5
   description_skills: elimina todas las unidades de clima del campo

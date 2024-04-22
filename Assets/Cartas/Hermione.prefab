@@ -102,5 +102,5 @@ MonoBehaviour:
   unidad: 1
   campo: 0100000000000000
   name: Hermione
-  hability: 10
-  description_skills: 
+  hability: 2
+  description_skills: habilidad normal

@@ -102,6 +102,6 @@ MonoBehaviour:
   unidad: 2
   campo: 03000000
   name: Sectum Sempra
-  hability: 9
+  hability: 5
   description_skills: afectan la fila seleccionada disminuyendo en 3 el poder de
     cada carta en ambos campos

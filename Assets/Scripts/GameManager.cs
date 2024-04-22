@@ -5,25 +5,27 @@ using System.Collections.Specialized;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 using static UnityEditor.PlayerSettings;
 
 public class GameManager : MonoBehaviour
 {
     public bool ConfirmaTurno = false;
-    public string turn;
-    public TextMeshProUGUI PointsGryff;
-    public TextMeshProUGUI PointsSlyth;
-    public TextMeshProUGUI RoundsGryff;
-    public TextMeshProUGUI RoundsSlyth;
+    public string turn; // Gryff o Slyth
+    public TextMeshProUGUI PointsGryff; //puntos de las cartas de la mano de Gryffindor
+    public TextMeshProUGUI PointsSlyth;//puntos de las cartas de la mano de Slytherin
+    public TextMeshProUGUI RoundsGryff; //rondas ganadas de Gryff
+    public TextMeshProUGUI RoundsSlyth;//rondas ganadas de Slyth
     public cardaction cardaction;
     public hogwartsdeck hogwartsdeck;
-    hogwartsdeck mazo;
-    hogwartsdeck mazo1;
-    public GameObject WinnerG;
-    public GameObject WinnerS;
+    hogwartsdeck mazo; //mazo de Gryffindor
+    hogwartsdeck mazo1; //mazo de slytherin
+    public GameObject WinnerG; //imagen de ganador de Gryffindor
+    public GameObject WinnerS; //imagen de ganador de Slytherin
+    public GameObject change_cards; //boton de cambiar cartas
 
-    public bool Gryffindor = false;
-    public bool Slytherin = false;
+    public bool Gryffindor = false; //bool que comprueba si gryffindor paso el turno sin jugar
+    public bool Slytherin = false;  //bool que comprueba si slytherin paso el turno sin jugar
 
     public List<Card> Points_Gryffindor_C = new List<Card>();
     public List<Card> Points_Gryffindor_D = new List<Card>();
@@ -46,8 +48,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        mazo = GameObject.FindGameObjectWithTag("Gryffindor").GetComponent<hogwartsdeck>(); //inicializa el mazo de gryffindor
-        mazo1 = GameObject.FindGameObjectWithTag("Slytherin").GetComponent<hogwartsdeck>(); //inicializa el mazo de slytherin
+        mazo = GameObject.FindGameObjectWithTag("Gryffindor").GetComponent<hogwartsdeck>(); //inicializa el objeto que posee el tag
+        mazo1 = GameObject.FindGameObjectWithTag("Slytherin").GetComponent<hogwartsdeck>(); 
+        change_cards = GameObject.FindGameObjectWithTag("change").GetComponent<GameObject>();
         RoundsGryff.text = "0";
         RoundsSlyth.text = "0";
     }
@@ -57,7 +60,7 @@ public class GameManager : MonoBehaviour
         new_round();
         winner();
     }
-    public void contador()
+    public void contador() //recorre cada lista o carta de puntos y va sumando su propiedad al TMP que le corresponde a cada jugador
     {
         int puntosA = 0;
         for (int i = 0; i < Points_Gryffindor_C.Count; i++)
@@ -167,7 +170,7 @@ public class GameManager : MonoBehaviour
                 {
                     if (Points_Slytherin_D[i].GetComponent<Card>().unidad != Kindofcard.Oro)
                     {
-                        puntosB += 2;
+                        puntosB += 2; //suma los puntos de cada carta diferente a las de oro
                     }
                 }
             }
@@ -189,7 +192,7 @@ public class GameManager : MonoBehaviour
         {
             for (int i = 0; i < Points_Slytherin_C.Count; i++)
             {
-                    if (Points_Slytherin_C[i].GetComponent<Card>().unidad != Kindofcard.Oro)
+                    if (Points_Slytherin_C[i].GetComponent<Card>().unidad != Kindofcard.Oro) //no cuenta las cartas de tipo oro ya que no les afecta
                     {
                         puntosB -= 3;
                     }
@@ -242,17 +245,15 @@ public class GameManager : MonoBehaviour
 
     public void new_round()
     {
-        if (Gryffindor == true && Slytherin ==true)
+        if (Gryffindor == true && Slytherin ==true) //si ambos jugadores pasaron de turno sin jugar 
        {
-            if (int.Parse(PointsGryff.text) >= int.Parse(PointsSlyth.text))
+            if (int.Parse(PointsGryff.text) >= int.Parse(PointsSlyth.text)) //compara las puntuaciones de los jugadores 
             {
             string text = RoundsGryff.text; 
-               int pointA= int.Parse(text) ;
+               int pointA= int.Parse(text); 
                pointA ++;
                RoundsGryff.text = pointA.ToString();
-                //turn = "Slyth";
-                
-                //Gryffindor gana en caso de empate (habilidad del lider)
+               //Gryffindor gana en caso de empate (habilidad del lider)
             }
             if (int.Parse(PointsGryff.text) < int.Parse(PointsSlyth.text))
             {
@@ -260,7 +261,6 @@ public class GameManager : MonoBehaviour
                 int pointB = int.Parse(text);
                 pointB++;
                 RoundsSlyth.text = pointB.ToString();
-                //turn = "Gryff";
             }
             PointsGryff.text = "0";
             PointsSlyth.text = "0";
@@ -281,10 +281,11 @@ public class GameManager : MonoBehaviour
             Points_Clima_A = null;
             Points_Clima_D = null;
             Points_Clima_C = null;
-            end_round();
-            Gryffindor = false;
+
+            end_round(); //limpia los campos
+            Gryffindor = false; //permite que vuelvan a jugar accediendo al panel de invocaciones despues de pasarse
             Slytherin = false;
-            mazo.rob(2);
+            mazo.rob(2); //roban 2 cartas al comenzar la ronda
             mazo1.rob(2);
         }
     }
@@ -296,7 +297,7 @@ public class GameManager : MonoBehaviour
         clean_scene(mazo1);
     }
 
-    public void clean_scene(hogwartsdeck generica)
+    public void clean_scene(hogwartsdeck generica) //limpia todo el campo perteneciente a un mazo determinado y los puntos de estos
     {
         for (int i = 0; i < generica.PosCuerpoacuerpo.Count; i++)
         {
@@ -312,7 +313,7 @@ public class GameManager : MonoBehaviour
         generica.PosDespeje.texture = null;
     }
 
-    public void winner()
+    public void winner() //si algun contador de rondas ganadas llega a 2 entonces activa la imagen de ganador respectiva
     {
         if (RoundsGryff.text == "2")
         {
@@ -324,53 +325,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public int mayor_carta (List<Card> lista)
+    public int mayor_carta (List<Card> lista) //funcion que devuelve el indice de la carta con mayor poder de las listas de puntos
     {
-        int mayor = lista[0].points;
+
+        int mayor = 0;
         int posicion = 0;
 
-        if (lista != null)
-        {
-            for (int i = 1; i < lista.Count; i++)
+            for (int i = 0; i < lista.Count; i++)
             {
-                if (lista[i].unidad != Kindofcard.Oro)
+                if (lista[i].unidad != Kindofcard.Oro) //evita tomar las cartas de oro
                 {
                     if (lista[i].points > mayor)
                     {
                         mayor = lista[i].points;
                         posicion = i;
                     }
-                    
+                return posicion;
                 }
             }
-            
-            
-        }
-        return posicion;
+        return -1; //si la primera posicion es de oro evita tomar el primer indice de la lista, devolviendo un indice inexistente
     }
 
-    public int menor_carta(List<Card> lista)
-    {
-        int menor = lista[0].points;
-        int posicion = 0;
-
-        if (lista != null)
-        {
-            for (int i = 1; i < lista.Count; i++)
-            {
-                if (lista[i].points < menor)
-                {
-                    menor = lista[i].points;
-                    posicion = i;
-                }
-            }
-            
-            
-        }
-        return posicion;
-    }
-
-    public List<Card> Puntos_asociados(List<RawImage> lista)
+    public List<Card> Puntos_asociados(List<RawImage> lista) //funcion que devuelve la lista de puntos asociadas a una fila determinada del campo
     {
         if (lista == mazo.PosCuerpoacuerpo)
         {

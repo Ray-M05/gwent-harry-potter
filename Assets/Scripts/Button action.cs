@@ -19,23 +19,23 @@ public class Buttonaction : MonoBehaviour
     
     }
 
-    public void invocarCuerpoacuerpo()
+    public void invocarCuerpoacuerpo() //boton de cuerpo a cuerpo en el panel de invocaciones
     {
-        Carta.invocar(1); //cartas cuerpo a cuerpo
+        Carta.invocar(1); //cartas de oro y plata en cuerpo a cuerpo
         Carta.invocar(4); //aumento pos cuerpo a cuerpo
         Carta.invocar(7); //clima afecta cuerpo a cuerpo
-        Carta.invocar(11);
+        Carta.invocar(11); //señuelo en cuerpo a cuerpoo
     }
 
-    public void invocarDistancia()
+    public void invocarDistancia() //boton de Distancia en el panel de invocaciones
     {
       Carta.invocar(2); //cartas
       Carta.invocar(5);  //aumento
       Carta.invocar(8); //clima
-      Carta.invocar(12);
+      Carta.invocar(12); //señuelo
     }
 
-    public void invocarAsedio()
+    public void invocarAsedio() //boton de Asedio en el panel de invocaciones
     {
         Carta.invocar(3);
         Carta.invocar(6);
@@ -43,7 +43,7 @@ public class Buttonaction : MonoBehaviour
         Carta.invocar(13);
     }
 
-    public void invocarDespeje()
+    public void invocarDespeje() //boton de despeje
     {
         Carta.invocar(10);
     }

@@ -31,7 +31,7 @@ public class hogwartsdeck : MonoBehaviour
     }
     public void rob(int count)  //metodo de robar cartas del deck
     {
-        for (int i = 0; (Hand.Count < 10)&& count>0; i++,count--) //va a recorrer el numero de cartas que se robaran 
+        for (int i = 0; (Hand.Count < 10)&& count>0; i++,count--) //mientras la mano tenga menos de 10 cartas y queden en el count 
         {
             Hand.Add(Deck[i]); //agrega las cartas de la mano al deck
             Deck.RemoveAt(i);
@@ -51,16 +51,15 @@ public class hogwartsdeck : MonoBehaviour
             deckcount--; //disminuye la cantidad de elementos del deck
         }
 
-        return list; 
+        return list; //devuelve la lista barajeada
     }
 
     public void muestracarta() //muestra las imagenes de las cartas en las imagenes en blanco de la mano
     {
         for (int i = 0; i < Pos.Count; i++)
         {
-            //lleva la imagen de la carta de la mano a la posicion i en blanco del tablero
-            Pos[i].GetComponent<RawImage>().texture = null;
-            Pos[i].GetComponent<RawImage>().texture = Hand[i].GetComponent<SpriteRenderer>().sprite.texture;
+            Pos[i].GetComponent<RawImage>().texture = null; //se van a inicializar en null por cada update por si sufre cambios la mano
+            Pos[i].GetComponent<RawImage>().texture = Hand[i].GetComponent<SpriteRenderer>().sprite.texture; //lleva la imagen de la carta de la mano a la posicion i en blanco del tablero
         }
     }
 

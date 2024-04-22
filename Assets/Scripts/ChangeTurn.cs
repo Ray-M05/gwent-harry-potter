@@ -11,11 +11,13 @@ public class ChangeTurn : MonoBehaviour
     public GameObject HandG;
     public GameObject SlythReverse;
     public GameObject HandS;
+    public ChangeCards ChangeCards;
 
-
-    public void cambioturno()
+    public bool Gryff_changeit = false; //bool que confirma si se cambiaron las cartas de Gryffindor
+    public bool Slyth_changeit = false; //bool que confirma si se cambiaron las cartas de Slytherin
+    public void cambioturno() //boton para cambiar de turno
     {
-
+        
         if (GameManager.turn == "Gryff") //si el turno es de gryffindor
         {
             if (GameManager.ConfirmaTurno == false)
@@ -23,8 +25,16 @@ public class ChangeTurn : MonoBehaviour
                 GameManager.Gryffindor = true;
             }
                 GameManager.turn = "Slyth"; //cambia turno a slytherin
-                GryffReverse.SetActive(true);
-                SlythReverse.SetActive(false);            
+                GryffReverse.SetActive(true); //activa el reverso de las cartas
+                SlythReverse.SetActive(false); //muestra el deck de slytherin
+            if (Slyth_changeit == false) //si slytherin no ha cambiado las cartas
+            {
+                ChangeCards.GameObject.SetActive(true); //activa el boton
+            }
+            else
+            {
+                ChangeCards.GameObject.SetActive(false); //si las cambio, apaga el boton
+            }
         }
         else
         {
@@ -35,9 +45,15 @@ public class ChangeTurn : MonoBehaviour
             GameManager.turn = "Gryff";
             GryffReverse.SetActive(false);
             SlythReverse.SetActive(true);
+            if (Gryff_changeit == false)
+            {
+                ChangeCards.GameObject.SetActive(true);
+            }
+            else
+            {
+                ChangeCards.GameObject.SetActive(false);
+            }
         }
-        GameManager.ConfirmaTurno = false;
+        GameManager.ConfirmaTurno = false; //permite que se pueda invocar una carta
     }
-
-
 }

@@ -102,5 +102,5 @@ MonoBehaviour:
   unidad: 0
   campo: 000000000100000002000000
   name: Snape
-  hability: 10
-  description_skills: No es faectada por ninguna habilidad
+  hability: 5
+  description_skills: No es faectada por ninguna habilidad especial

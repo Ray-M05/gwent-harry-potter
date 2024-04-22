@@ -102,5 +102,5 @@ MonoBehaviour:
   unidad: 1
   campo: 0000000001000000
   name: Draco Malfoy
-  hability: 10
-  description_skills: 
+  hability: 2
+  description_skills: habilidad normal
