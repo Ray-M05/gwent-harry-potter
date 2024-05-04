@@ -741,21 +741,6 @@ public class cardaction : MonoBehaviour
                     GameManager.Puntos_asociados(mayores).Clear();
                 }
                 break;
-
-            case "clean_card_up": //busca la cata con mayor poder del adversario en la fila en que fue invoado
-
-                    /*int A = GameManager.mayor_carta(GameManager.Puntos_asociados(fila2));
-
-                    for (int i = 0; i < fila2.Count; i++)
-                    {
-                        if (GameManager.Puntos_asociados(fila2)[A].GetComponent<SpriteRenderer>().sprite.texture == fila2[i].texture) //comprueba si la imagen de la carta la posee algun raw image en la lista de posiciones de esa fila
-                        {
-                            fila2[i].texture = null;
-                            break; //solo toma el primero en caso de la carta este repetida
-                        }
-                    GameManager.Puntos_asociados(fila2).RemoveAt(A);
-                    }*/
-                    break;
      }
     }
 
