@@ -6,7 +6,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
-using static UnityEditor.PlayerSettings;
 
 public class GameManager : MonoBehaviour
 {

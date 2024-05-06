@@ -4,9 +4,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.PlayerSettings;
 using System;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class cardaction : MonoBehaviour
 {
@@ -100,7 +98,7 @@ public class cardaction : MonoBehaviour
             for (int j = 0; j < mazo.Points.Count; j++) //por cada TMP de la lista puntos 
             {
                 mazo.Points[j].text = mazo.Hand[j].GetComponent<Card>().points.ToString(); //le pasa el poder de las cartas de la mano al texto
-                mazo1.Points[j].text = null; //los inicializa en null desde el otro deck para que no sean visibles
+                mazo1.Points[j].text = ""; //los inicializa en null desde el otro deck para que no sean visibles
             }
         }
         else if (GameManager.turn == "Slyth")
@@ -108,7 +106,7 @@ public class cardaction : MonoBehaviour
             for (int j = 0; j < mazo1.Points.Count; j++)
             {
                 mazo1.Points[j].text = mazo1.Hand[j].GetComponent<Card>().points.ToString();
-                mazo.Points[j].text = null;
+                mazo.Points[j].text = "";
             }
         }
     }

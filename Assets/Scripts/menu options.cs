@@ -9,13 +9,13 @@ public class menuoptions : MonoBehaviour
     // metodo para comenzar el juego
     public void Play_Game()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     // metodo para regresar al menu principal
     public void Play_Menu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     public void Quit_Game()
