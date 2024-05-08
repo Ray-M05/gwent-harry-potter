@@ -3212,12 +3212,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f118ad8fbdf124c85b38128acd59af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 0}
-  GryffReverse: {fileID: 0}
-  HandG: {fileID: 0}
-  SlythReverse: {fileID: 0}
-  HandS: {fileID: 0}
-  ChangeCards: {fileID: 0}
+  GameManager: {fileID: 1432765893}
+  GryffReverse: {fileID: 899518283}
+  HandG: {fileID: 1224648052}
+  SlythReverse: {fileID: 2008974240}
+  HandS: {fileID: 85932135}
+  ChangeCards: {fileID: 1825117991}
   Gryff_changeit: 0
   Slyth_changeit: 0
 --- !u!1 &384988342
@@ -5105,12 +5105,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f118ad8fbdf124c85b38128acd59af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 0}
-  GryffReverse: {fileID: 0}
-  HandG: {fileID: 0}
-  SlythReverse: {fileID: 0}
-  HandS: {fileID: 0}
-  ChangeCards: {fileID: 0}
+  GameManager: {fileID: 1432765893}
+  GryffReverse: {fileID: 899518283}
+  HandG: {fileID: 1224648052}
+  SlythReverse: {fileID: 2008974240}
+  HandS: {fileID: 85932135}
+  ChangeCards: {fileID: 1825117991}
   Gryff_changeit: 0
   Slyth_changeit: 0
 --- !u!114 &655345994
@@ -7911,12 +7911,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f118ad8fbdf124c85b38128acd59af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 0}
-  GryffReverse: {fileID: 0}
-  HandG: {fileID: 0}
-  SlythReverse: {fileID: 0}
-  HandS: {fileID: 0}
-  ChangeCards: {fileID: 0}
+  GameManager: {fileID: 1432765893}
+  GryffReverse: {fileID: 899518283}
+  HandG: {fileID: 1224648052}
+  SlythReverse: {fileID: 2008974240}
+  HandS: {fileID: 85932135}
+  ChangeCards: {fileID: 1825117991}
   Gryff_changeit: 0
   Slyth_changeit: 0
 --- !u!1 &959048280
@@ -12880,12 +12880,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f118ad8fbdf124c85b38128acd59af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManager: {fileID: 0}
-  GryffReverse: {fileID: 0}
-  HandG: {fileID: 0}
-  SlythReverse: {fileID: 0}
-  HandS: {fileID: 0}
-  ChangeCards: {fileID: 0}
+  GameManager: {fileID: 1432765893}
+  GryffReverse: {fileID: 899518283}
+  HandG: {fileID: 1224648052}
+  SlythReverse: {fileID: 2008974240}
+  HandS: {fileID: 85932135}
+  ChangeCards: {fileID: 1825117991}
   Gryff_changeit: 0
   Slyth_changeit: 0
 --- !u!114 &1629208018

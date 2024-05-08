@@ -125,7 +125,7 @@ public class hogwartsdeck : MonoBehaviour
             if (Pos[i].texture == null)
             {
                 Pos[i].transform.localScale = new Vector2(0, 0);
-                Points[i].text = null; //no recorre los puntos si no hay  una carta en la mano
+                Points[i].text = ""; //no recorre los puntos si no hay  una carta en la mano
             }
             else
             {

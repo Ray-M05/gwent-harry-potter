@@ -17,11 +17,15 @@ public class menuoptions : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
+    // este metodo quita el juego en el ejecutable
     public void Quit_Game()
     {
         Debug.Log("Quit");
         Application.Quit();
     }
-
+    //este metodo va a la escena de creditos
+    public void Play_Credits()
+    {
+        SceneManager.LoadScene(2);
+    }
 }
