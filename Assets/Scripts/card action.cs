@@ -35,11 +35,11 @@ public class cardaction : MonoBehaviour
         hability = GameObject.FindGameObjectWithTag("Hability").GetComponent<TextMeshProUGUI>();
         Leader1 = GameObject.FindGameObjectWithTag("Harry").GetComponent<Card>(); //inicializa el primer lider a partir de su tag
         Leader2 = GameObject.FindGameObjectWithTag("Voldemort").GetComponent<Card>();
-
+        this.GameManager = GameObject.Find("GameManager").GetComponent<GameManager>(); 
 
         cardvisual.transform.localScale = new Vector2(0, 0); //el visual y la descripcion se inicializan en escala 0
         description_.transform.localScale = new Vector2(0, 0);
-    }
+    } 
 
     private void Update()
     {
@@ -93,17 +93,19 @@ public class cardaction : MonoBehaviour
 
     public void muestrapuntos()
     {
+        
         if (GameManager.turn == "Gryff") //si el turno es de Gryffindor
         {
-            for (int j = 0; j < mazo.Points.Count; j++) //por cada TMP de la lista puntos 
+            for (int j = 0; j < mazo.Hand.Count; j++) //por cada TMP de la lista puntos 
             {
                 mazo.Points[j].text = mazo.Hand[j].GetComponent<Card>().points.ToString(); //le pasa el poder de las cartas de la mano al texto
                 mazo1.Points[j].text = ""; //los inicializa en null desde el otro deck para que no sean visibles
+                
             }
         }
         else if (GameManager.turn == "Slyth")
         {
-            for (int j = 0; j < mazo1.Points.Count; j++)
+            for (int j = 0; j < mazo1.Hand.Count; j++)
             {
                 mazo1.Points[j].text = mazo1.Hand[j].GetComponent<Card>().points.ToString();
                 mazo.Points[j].text = "";
